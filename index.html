@@ -135,7 +135,7 @@ body[data-theme="grit"] .hero-img #heroSideFood{width:36%;height:29%;right:4%;bo
 body[data-theme="grit"] .hero-img #heroThirdFood{width:34%;height:28%;left:3%;bottom:8%;transform:rotate(2deg)}
 body[data-theme="grit"] .hero-copy{padding-left:clamp(30px,4vw,68px)}
 body[data-theme="grit"] .hero h1{font-size:clamp(4.2rem,7.4vw,7.1rem);max-width:520px}
-body[data-theme="grit"] .promise{background-image:linear-gradient(#21170fe8,#21170fe8),url('https://images.unsplash.com/photo-木?auto=format&fit=crop&w=1200&q=80');background-color:#251a12}
+body[data-theme="grit"] .promise{background-image:linear-gradient(#21170fe8,#21170fe8),url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80');background-color:#251a12}
 body[data-theme="grit"] .content{background:#0c0b0a}
 body[data-theme="grit"] .section-head h2{font-size:clamp(2.7rem,5vw,4.5rem)}
 body[data-theme="grit"] .card{background:#100f0d;border-color:#5b321c}
@@ -208,6 +208,26 @@ body[data-theme="wood"] .footer{background:#120b07f5;border-top-color:#b47a43}
  body[data-theme="cream"] #featured{grid-template-columns:1fr}
  body[data-theme="wood"] .hero h1{font-size:3.3rem;padding:12px}
  body[data-theme="wood"] .hero-img #heroFoodImage{top:34%;height:38%;width:55%}
+}
+
+
+/* Match the reference compositions: one hero food photograph per concept;
+   burgers, fries, strips and lasagna are featured in the cards below. */
+body[data-theme="grit"] .hero-img #heroSideFood,
+body[data-theme="grit"] .hero-img #heroThirdFood,
+body[data-theme="cream"] .hero-img #heroSideFood,
+body[data-theme="cream"] .hero-img #heroThirdFood,
+body[data-theme="wood"] .hero-img #heroSideFood,
+body[data-theme="wood"] .hero-img #heroThirdFood{display:none}
+body[data-theme="grit"] #featured,
+body[data-theme="wood"] #featured{grid-template-columns:repeat(4,minmax(0,1fr))}
+body[data-theme="grit"] #featured .card img,
+body[data-theme="wood"] #featured .card img{height:190px;min-height:190px}
+body[data-theme="wood"] .hero-img #heroFoodImage{width:43%;height:66%;top:14%;right:4%;clip-path:none}
+@media(max-width:850px){
+ body[data-theme="grit"] #featured,
+ body[data-theme="wood"] #featured{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body[data-theme="wood"] .hero-img #heroFoodImage{width:53%;height:48%;top:28%;right:3%}
 }
 
 </style></head>
