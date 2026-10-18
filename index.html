@@ -80,6 +80,22 @@ header.scrolled{box-shadow:0 10px 35px #0005}
 @keyframes toastIn{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal-ready .reveal{opacity:1;transform:none}}
 
+
+/* Food-led hero composition and theme-specific photography */
+.hero{position:relative;isolation:isolate;overflow:hidden}
+.hero-img{position:absolute;inset:0 0 0 34%;min-height:100%;z-index:-1}
+.hero-img img{min-height:100%;height:100%;object-position:center;filter:saturate(1.12) contrast(1.04)}
+.hero-img:after{background:linear-gradient(90deg,var(--panel) 0%,color-mix(in srgb,var(--panel) 88%,transparent) 18%,transparent 68%),linear-gradient(0deg,#0008,transparent 42%)}
+.hero-copy{min-height:470px;max-width:790px;padding-top:clamp(45px,7vw,82px);padding-bottom:clamp(35px,5vw,62px)}
+.hero h1{max-width:760px;text-wrap:balance}
+.hero .hero-copy>p{max-width:480px}
+.hero-food-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:25px;max-width:580px}
+.hero-food-tags span{font:700 .7rem var(--head);text-transform:uppercase;letter-spacing:.06em;padding:7px 10px;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);background:#0b0909b8;color:#fff3e7;backdrop-filter:blur(8px)}
+.hero-food-tags span:before{content:"✦";color:var(--accent);margin-right:6px}
+.hero-img:before{z-index:1}
+@media(max-width:850px){.hero-img{inset:0;opacity:.5}.hero-img:after{background:linear-gradient(90deg,var(--panel) 0%,color-mix(in srgb,var(--panel) 72%,transparent) 55%,#0002),linear-gradient(0deg,var(--panel),transparent 65%)}.hero-copy{min-height:500px;max-width:100%;position:relative}.hero h1{max-width:650px}}
+@media(max-width:560px){.hero-copy{min-height:520px;padding-top:42px}.hero h1{font-size:clamp(3.6rem,16vw,5rem)}.hero-food-tags{gap:6px}.hero-food-tags span{font-size:.62rem;padding:6px 8px}}
+
 </style></head>
 <body data-theme="grit">
 <div class="motion-progress" id="motionProgress" aria-hidden="true"></div>
@@ -87,7 +103,7 @@ header.scrolled{box-shadow:0 10px 35px #0005}
 <aside class="panel" id="panel"><h2>Customize</h2><p style="color:var(--muted);font-size:.8rem">Adjust the live preview.</p><div class="setting"><label for="business">Business name</label><input id="business" value="JJ’s Wings & Things"></div><div class="setting"><label for="headline">Hero headline (use | to split lines)</label><input id="headline" value="JJ’s|Wings & Things"></div><div class="setting"><label for="accent">Accent colour</label><input id="accent" type="color" value="#f07822"></div><div class="setting"><label for="background">Background colour</label><input id="background" type="color" value="#100f0e"></div><div class="setting"><label for="font">Heading font</label><select id="font"><option value="condensed">Bold condensed</option><option value="serif">Classic serif</option><option value="sans">Clean sans-serif</option></select></div><div class="setting"><label for="spacing">Section spacing</label><select id="spacing"><option value="normal">Normal</option><option value="compact">Compact</option></select></div><div class="setting"><label for="corners">Card corners</label><select id="corners"><option value="sharp">Sharp poster style</option><option value="rounded">Rounded</option></select></div><div class="panel-actions"><button class="btn" id="reset">Reset</button><button class="btn secondary" id="save">Save locally</button></div></aside>
 <header><a class="brand" href="#home" data-page="home"><div class="logo">JJ<small>WINGS & THINGS</small></div><span class="brandname" id="brandname">JJ’s <span>Wings</span><br>& Things<small>FORT HOPE, ONTARIO</small></span></a><nav class="nav"><a href="#home" data-page="home" class="active">Home</a><a href="#menu" data-page="menu">Menu</a><a href="#about" data-page="about">About</a><a href="#gallery" data-page="gallery">Gallery</a><a href="#contact" data-page="contact">Contact</a><a class="cta" href="#menu" data-page="menu">View Menu</a></nav></header>
 <main>
-<section class="page active" id="page-home"><div class="hero"><div class="hero-copy"><div class="eyebrow">Fort Hope, Ontario</div><h1 id="heroHeading">JJ’s <span>Wings & Things</span></h1><p>Wings, fries, poutine, nachos with cheese sauce, burgers, smokies and weekly specials.</p><div class="buttons"><a class="btn" href="#menu" data-page="menu">View Menu</a><a class="btn secondary" href="#contact" data-page="contact">Contact JJ</a></div></div><div class="hero-img"><img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=1400&q=85" alt="Saucy chicken wings and golden fries"></div></div><div class="promise"><div><b>Delicious Meals</b><span>Wings, burgers, more</span></div><div><b>Local Business</b><span>Proudly Fort Hope</span></div><div><b>Good Food</b><span>Brings people together</span></div></div><section class="content"><div class="section-head"><h2>Featured <span>Favourites</span></h2><p>A bold, food-first design inspired by JJ’s branding. Confirm menu details before publishing.</p></div><div class="cards" id="featured"></div></section><section class="story"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=85" alt="Warm restaurant interior"><div><div class="eyebrow">Good food · Community first</div><h2>Good Food.<br><span>Stronger Community.</span></h2><p>This space can share JJ’s own story and what makes his food special.</p><a class="btn" href="#about" data-page="about">About JJ’s</a></div></section></section>
+<section class="page active" id="page-home"><div class="hero"><div class="hero-copy"><div class="eyebrow">Fort Hope, Ontario</div><h1 id="heroHeading">JJ’s <span>Wings & Things</span></h1><p>Wings, fries, poutine, nachos with cheese sauce, burgers, smokies and weekly specials.</p><div class="buttons"><a class="btn" href="#menu" data-page="menu">View Menu</a><a class="btn secondary" href="#contact" data-page="contact">Contact JJ</a></div><div class="hero-food-tags"><span>Wings</span><span>Burgers</span><span>Fries</span><span>Poutine</span></div></div><div class="hero-img"><img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=1400&q=85" alt="Saucy chicken wings and golden fries"></div></div><div class="promise"><div><b>Delicious Meals</b><span>Wings, burgers, more</span></div><div><b>Local Business</b><span>Proudly Fort Hope</span></div><div><b>Good Food</b><span>Brings people together</span></div></div><section class="content"><div class="section-head"><h2>Featured <span>Favourites</span></h2><p>A bold, food-first design inspired by JJ’s branding. Confirm menu details before publishing.</p></div><div class="cards" id="featured"></div></section><section class="story"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=85" alt="Warm restaurant interior"><div><div class="eyebrow">Good food · Community first</div><h2>Good Food.<br><span>Stronger Community.</span></h2><p>This space can share JJ’s own story and what makes his food special.</p><a class="btn" href="#about" data-page="about">About JJ’s</a></div></section></section>
 <section class="page" id="page-menu"><div class="pagehead"><div class="eyebrow">Fort Hope, Ontario</div><h1>View Menu</h1><p>The supplied menu poster's price period ended September 30, 2026. Current prices and availability must be confirmed before launch.</p></div><section class="content"><div class="menu-list" id="menuList"></div><p class="pending">Current prices, portions and availability need owner confirmation.</p></section></section>
 <section class="page" id="page-about"><div class="pagehead"><div class="eyebrow">About the business</div><h1>Local Flavour</h1><p>This page is ready for JJ’s approved business story, real kitchen photos and community details.</p></div><section class="content"><div class="story"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=85" alt="Restaurant table setting"><div><h2>More Than<br><span>Just Great Food.</span></h2><p>Replace this placeholder with JJ’s own words before launch.</p><a class="btn" href="#contact" data-page="contact">Get in touch</a></div></div></section></section>
 <section class="page" id="page-gallery"><div class="pagehead"><div class="eyebrow">Food photos</div><h1>Gallery</h1><p>Showcase real food photos, weekly specials and customer favourites.</p></div><section class="content"><div class="gallery" id="gallery"></div><p class="pending">Illustrative photos should be replaced with actual dish photos where possible.</p></section></section>
@@ -107,9 +123,59 @@ const items=[
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 function safe(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function render(){const card=d=>'<article class="card"><img loading="lazy" src="'+d[3]+'" alt="'+safe(d[0])+'"><div><small>'+safe(d[1])+'</small><h3>'+safe(d[0])+'</h3><p>'+safe(d[2])+'</p></div></article>';$("#featured").innerHTML=items.slice(0,4).map(card).join("");$("#menuList").innerHTML=items.map(d=>'<article class="menu-item"><img loading="lazy" src="'+d[3]+'" alt="'+safe(d[0])+'"><div><h3>'+safe(d[0])+'</h3><p>'+safe(d[2])+'</p><span class="pending">Price / availability to be confirmed</span></div></article>').join("");$("#gallery").innerHTML=items.map(d=>'<img loading="lazy" src="'+d[3]+'" alt="'+safe(d[0])+'">').join("")}
+
+/* Theme-specific food photography: each design has its own visual food mood. */
+const photoThemes={
+ grit:{
+  hero:"https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=1800&q=88",
+  foods:[
+   "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=85"
+  ]
+ },
+ cream:{
+  hero:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1800&q=88",
+  foods:[
+   "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85"
+  ]
+ },
+ wood:{
+  hero:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=88",
+  foods:[
+   "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85",
+   "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=85"
+  ]
+ }
+};
+function applyFoodPhotography(theme){
+ const chosen=photoThemes[theme]||photoThemes.grit;
+ const hero=document.querySelector(".hero-img img");if(hero)hero.src=chosen.hero;
+ items.forEach((item,i)=>{if(chosen.foods[i])item[3]=chosen.foods[i]});
+ render();
+}
+
 const themes={grit:{bg:"#100f0e",panel:"#191613",panel2:"#211a15",text:"#fff8ef",muted:"#c9bbae",accent:"#f07822",red:"#b82213",line:"#5c351f"},cream:{bg:"#f4eadb",panel:"#fff9ef",panel2:"#e8d7bf",text:"#1a1714",muted:"#66594b",accent:"#a91f17",red:"#ad2017",line:"#d0b89b"},wood:{bg:"#21170f",panel:"#2b1c12",panel2:"#3a281a",text:"#fff0d8",muted:"#d4bda1",accent:"#d9a66a",red:"#5b2c16",line:"#725033"}};
 let current="grit";
-function setTheme(n){current=n;document.body.dataset.theme=n;Object.entries(themes[n]).forEach(([k,v])=>document.documentElement.style.setProperty("--"+k,v));$$(".themes button").forEach(b=>b.classList.toggle("active",b.dataset.theme===n));$("#accent").value=themes[n].accent;$("#background").value=themes[n].bg;document.body.classList.remove("compact","rounded");$("#spacing").value="normal";$("#corners").value="sharp"}
+function setTheme(n){current=n;document.body.dataset.theme=n;applyFoodPhotography(n);Object.entries(themes[n]).forEach(([k,v])=>document.documentElement.style.setProperty("--"+k,v));$$(".themes button").forEach(b=>b.classList.toggle("active",b.dataset.theme===n));$("#accent").value=themes[n].accent;$("#background").value=themes[n].bg;document.body.classList.remove("compact","rounded");$("#spacing").value="normal";$("#corners").value="sharp"}
 function page(n){const p=$("#page-"+n);if(!p)return;$$(".page").forEach(x=>x.classList.toggle("active",x===p));$$("[data-page]").forEach(a=>a.classList.toggle("active",a.dataset.page===n));history.replaceState(null,"","#"+n);window.scrollTo({top:0,behavior:"smooth"})}
 document.addEventListener("click",e=>{const a=e.target.closest("[data-page]");if(a){e.preventDefault();page(a.dataset.page)}});window.addEventListener("hashchange",()=>page(location.hash.slice(1)||"home"));$$(".themes button").forEach(b=>b.addEventListener("click",()=>setTheme(b.dataset.theme)));$("#openPanel").addEventListener("click",()=>$("#panel").classList.toggle("open"));
 function nameUpdate(){let n=$("#business").value.trim()||"JJ’s Wings & Things";$("#brandname").innerHTML=safe(n).replace("Wings",'<span>Wings</span>')+'<small>FORT HOPE, ONTARIO</small>';$("#footername").textContent=n;document.title=n+" | Fort Hope"}
