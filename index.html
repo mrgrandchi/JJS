@@ -4,259 +4,32 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#100f0e">
 <title>JJ's Wings & Things | Fort Hope, Ontario</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Oswald:wght@500;700&display=swap');
-:root{--bg:#100f0e;--panel:#191613;--panel2:#211a15;--text:#fff8ef;--muted:#c9bbae;--accent:#f07822;--red:#b82213;--line:#5c351f;--head:'Barlow Condensed',Impact,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 Arial,sans-serif}button,a{font:inherit}a{color:inherit}
-.studio{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#0c0b0af5;border-bottom:1px solid var(--line);padding:10px 3%}.studio strong{display:block;color:#e7a46b;font-size:.7rem;letter-spacing:.15em}.studio small{color:#bba99b}.themes{display:flex;gap:6px;flex-wrap:wrap}.themes button,.customize{padding:8px 11px;background:#211a15;color:white;border:1px solid #67442e;font:700 .72rem var(--head);text-transform:uppercase;cursor:pointer}.themes button.active{background:var(--accent);color:#15100c}.customize{border-color:var(--accent);color:var(--accent)}
-header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 3%;background:var(--panel);border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;text-decoration:none}.logo{width:58px;height:58px;border:2px solid #b38b4b;border-radius:50%;background:radial-gradient(circle,#e8d7a8,#94702b);color:#261d0d;display:grid;place-items:center;text-align:center;font:900 1.1rem var(--head);line-height:.8}.logo small{display:block;font-size:.45rem;letter-spacing:.04em}.brandname{font:900 clamp(1.2rem,2.4vw,2rem)/.83 var(--head);text-transform:uppercase}.brandname span{color:var(--accent)}.brandname small{display:block;color:var(--muted);font:700 .52rem Arial;letter-spacing:.2em;margin-top:8px}.nav{display:flex;align-items:center;gap:clamp(10px,1.8vw,24px);flex-wrap:wrap}.nav a{font:700 .76rem var(--head);text-transform:uppercase;text-decoration:none}.nav a:hover,.nav a.active{color:var(--accent)}.nav .cta{background:var(--red);padding:10px 15px;border-radius:4px}
-.page{display:none}.page.active{display:block}.hero{display:grid;grid-template-columns:.95fr 1.05fr;background:var(--panel);min-height:470px}.hero-copy{padding:clamp(30px,5vw,65px);align-self:center}.eyebrow{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;font-weight:800;color:var(--accent)}h1,h2,h3{font-family:var(--head);text-transform:uppercase}h1{font-size:clamp(4rem,8vw,7.5rem);line-height:.78;margin:20px 0 22px;letter-spacing:-.03em}h1 span{display:block;color:var(--accent);font-style:italic}.hero p{max-width:430px;color:var(--muted)}.buttons{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}.btn{display:inline-block;background:var(--red);border:1px solid var(--red);padding:11px 20px;text-decoration:none;font:800 .85rem var(--head);text-transform:uppercase;cursor:pointer;color:white}.btn.secondary{background:transparent;border-color:var(--line)}.hero-img{position:relative;min-height:470px}.hero-img img{width:100%;height:100%;min-height:470px;object-fit:cover;display:block}.hero-img:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--panel),transparent 27%),linear-gradient(0deg,#0005,transparent 45%)}
-.promise{display:grid;grid-template-columns:repeat(3,1fr);background:var(--panel2);border-bottom:2px solid var(--accent)}.promise div{text-align:center;padding:16px 8px;border-right:1px solid var(--line)}.promise b{display:block;font:800 1.25rem var(--head);text-transform:uppercase}.promise span{font-size:.68rem;color:var(--muted);text-transform:uppercase}
-.content{padding:clamp(38px,5vw,68px) 3%}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;border-bottom:2px solid var(--accent);padding-bottom:12px;margin-bottom:20px}.section-head h2{font-size:clamp(2.5rem,5vw,4.5rem);line-height:.85;margin:0}.section-head h2 span{color:var(--accent)}.section-head p{max-width:390px;color:var(--muted);font-size:.8rem;margin:0}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.card{background:var(--panel);border:1px solid var(--line)}.card img{display:block;width:100%;height:190px;object-fit:cover}.card div{padding:12px;border-top:3px solid var(--accent)}.card small{color:var(--accent);font-size:.62rem;font-weight:bold;text-transform:uppercase;letter-spacing:.1em}.card h3{font-size:1.5rem;line-height:.9;margin:6px 0}.card p{font-size:.75rem;color:var(--muted);margin:0}.story{display:grid;grid-template-columns:1fr 1fr;background:var(--panel2)}.story img{width:100%;height:100%;min-height:300px;object-fit:cover}.story div{align-self:center;padding:clamp(28px,5vw,60px)}.story h2{font-size:clamp(2.8rem,5vw,5rem);line-height:.85;margin:12px 0}.story h2 span{color:var(--accent)}.story p{color:var(--muted)}.pagehead{padding:45px 3% 28px;background:var(--panel2);border-bottom:3px solid var(--accent)}.pagehead h1{font-size:clamp(3.5rem,7vw,6.5rem);margin:10px 0}.pagehead p{color:var(--muted);max-width:720px}.menu-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 25px}.menu-item{display:grid;grid-template-columns:100px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}.menu-item img{width:100px;height:90px;object-fit:cover}.menu-item h3{font-size:1.5rem;line-height:.9;margin:4px 0}.menu-item p{color:var(--muted);font-size:.8rem;margin:0 0 6px}.pending{font-size:.66rem;color:var(--accent);font-weight:bold;text-transform:uppercase}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.gallery img{width:100%;height:260px;object-fit:cover}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.info{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--accent);padding:22px}.info h2{font-size:2rem}.info p{color:var(--muted)}.info label{display:block;color:var(--muted);margin:12px 0;font-size:.8rem}.info input,.info textarea{display:block;width:100%;padding:11px;background:var(--bg);border:1px solid var(--line);color:var(--text);margin-top:5px}.info textarea{min-height:90px}.footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:25px 3%;background:#0b0a09;border-top:3px solid var(--accent);color:var(--muted);font-size:.76rem}.footer p{margin:0}.footer strong{font:900 1.5rem var(--head);color:white;text-transform:uppercase}
-.panel{display:none;position:fixed;z-index:40;right:14px;top:92px;width:min(330px,calc(100vw - 28px));max-height:calc(100vh - 110px);overflow:auto;background:#171310;border:1px solid var(--accent);padding:18px;box-shadow:0 18px 70px #000b}.panel.open{display:block}.panel h2{margin:0;font-size:2rem}.setting{padding:11px 0;border-top:1px solid var(--line)}.setting label{display:block;font-size:.8rem;margin-bottom:5px}.setting input,.setting select{width:100%;padding:9px;background:#241b15;border:1px solid var(--line);color:white}.setting input[type=color]{height:36px;padding:2px}.panel-actions{display:flex;gap:8px}.panel-actions button{flex:1;cursor:pointer}.toast{display:none;position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:50;background:#111;padding:10px 16px;border:1px solid var(--accent)}.toast.show{display:block}
-body[data-theme="cream"]{--bg:#f4eadb;--panel:#fff9ef;--panel2:#e8d7bf;--text:#1a1714;--muted:#66594b;--accent:#a91f17;--red:#ad2017;--line:#d0b89b;--head:Oswald,Arial,sans-serif}body[data-theme="cream"] .studio,body[data-theme="cream"] .panel{background:#191613;color:white}body[data-theme="cream"] .hero-img:after{background:linear-gradient(90deg,var(--panel),transparent 26%)}body[data-theme="wood"]{--bg:#21170f;--panel:#2b1c12;--panel2:#3a281a;--text:#fff0d8;--muted:#d4bda1;--accent:#d9a66a;--red:#5b2c16;--line:#725033;--head:Oswald,Arial,sans-serif}body[data-theme="wood"] header,body[data-theme="wood"] .footer{background:#140c07}body[data-theme="wood"] .hero{background:#21150d}body.compact .content{padding-top:24px;padding-bottom:24px}body.rounded .card,body.rounded .card img{border-radius:12px;overflow:hidden}
-@media(max-width:850px){header{flex-wrap:wrap}.nav{width:100%;gap:14px}.hero{grid-template-columns:1fr}.hero-copy{padding:36px 24px 25px}.hero-img,.hero-img img{height:310px;min-height:310px}.hero-img:after{background:linear-gradient(0deg,var(--panel),transparent 35%)}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.story{grid-template-columns:1fr}.story img{max-height:300px}.story div{padding:30px}.promise b{font-size:1.05rem}}
-@media(max-width:560px){.studio>div:first-child{width:100%}.themes{width:100%}.themes button{flex:1;padding:7px 4px;font-size:.64rem}.brand .logo{width:48px;height:48px}.brandname{font-size:1.25rem}.nav{gap:12px}.nav a{font-size:.68rem}.hero h1{font-size:4.3rem}.promise span{font-size:.57rem}.cards,.menu-list,.contact-grid{grid-template-columns:1fr}.card img{height:220px}.section-head{display:block}.section-head p{margin-top:12px}.gallery{grid-template-columns:repeat(2,1fr)}.gallery img{height:170px}.footer{display:block}.footer p+p{margin-top:10px}.panel{top:150px}}
-
-/* Motion polish: cinematic entrance, scroll reveals, responsive hover feedback */
-html{scroll-padding-top:90px}
-body{overflow-x:hidden}
-body:before{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 12% 20%,color-mix(in srgb,var(--accent) 13%,transparent),transparent 34%),radial-gradient(ellipse at 85% 80%,color-mix(in srgb,var(--red) 14%,transparent),transparent 38%);animation:ambientDrift 18s ease-in-out infinite alternate}
-@keyframes ambientDrift{0%{transform:translate3d(-1%,0,0) scale(1)}100%{transform:translate3d(2%,-1.5%,0) scale(1.06)}}
-.motion-progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--red),var(--accent),#ffd18b);z-index:100;box-shadow:0 0 12px color-mix(in srgb,var(--accent) 70%,transparent)}
-.studio{backdrop-filter:blur(14px);transition:padding .25s,background .25s}
-header{position:relative;z-index:5;transition:box-shadow .3s,background .3s}
-header.scrolled{box-shadow:0 10px 35px #0005}
-.brand .logo{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
-.brand:hover .logo{transform:rotate(-8deg) scale(1.06);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 16%,transparent),0 0 30px color-mix(in srgb,var(--accent) 25%,transparent)}
-.nav a{position:relative;transition:color .2s,transform .2s}
-.nav a:not(.cta):after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:2px;background:var(--accent);transition:right .25s}
-.nav a:not(.cta):hover{transform:translateY(-2px)}
-.nav a:not(.cta):hover:after,.nav a.active:not(.cta):after{right:0}
-.btn,.themes button,.customize{transition:transform .22s,box-shadow .22s,background .22s,border-color .22s}
-.btn:hover,.themes button:hover,.customize:hover{transform:translateY(-3px);box-shadow:0 9px 24px color-mix(in srgb,var(--accent) 23%,transparent)}
-.btn:active,.themes button:active,.customize:active{transform:translateY(0) scale(.98)}
-.hero-copy{position:relative;z-index:1;animation:copyEnter .85s cubic-bezier(.2,.8,.2,1) both}
-@keyframes copyEnter{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-.hero .eyebrow{animation:copyEnter .7s .08s both}
-.hero h1{animation:copyEnter .8s .14s both}
-.hero-copy>p{animation:copyEnter .8s .22s both}
-.hero-copy .buttons{animation:copyEnter .8s .3s both}
-.hero-img{overflow:hidden}
-.hero-img img{transform:scale(1.045);animation:heroPhotoIn 1.4s cubic-bezier(.2,.7,.2,1) both;transition:transform 1s cubic-bezier(.2,.7,.2,1),filter .5s}
-.hero:hover .hero-img img{transform:scale(1.09);filter:saturate(1.12)}
-@keyframes heroPhotoIn{from{opacity:.35;transform:scale(1.15)}to{opacity:1;transform:scale(1.045)}}
-.hero-img:before{content:"";position:absolute;z-index:2;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 20%,#ffffff16 45%,transparent 60%);transform:translateX(-120%);animation:photoShine 1.2s .45s ease-out both}
-@keyframes photoShine{to{transform:translateX(120%)}}
-.promise div{transition:background .3s,transform .3s}
-.promise div:hover{background:color-mix(in srgb,var(--accent) 10%,var(--panel2));transform:translateY(-3px)}
-.promise b{transition:letter-spacing .25s}
-.promise div:hover b{letter-spacing:.04em;color:var(--accent)}
-.card{position:relative;overflow:hidden;transform:translateY(0);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .35s}
-.card:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 18px 35px #0006}
-.card img{transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .4s}
-.card:hover img{transform:scale(1.075);filter:saturate(1.18) contrast(1.03)}
-.card div{transition:background .3s}
-.card:hover div{background:color-mix(in srgb,var(--accent) 7%,var(--panel))}
-.section-head h2{animation:headingIn .7s both}
-@keyframes headingIn{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:translateX(0)}}
-.story img{transition:transform .8s,filter .5s}
-.story:hover img{transform:scale(1.025);filter:saturate(1.1)}
-.story{overflow:hidden}
-.pagehead{position:relative;overflow:hidden}
-.pagehead:after{content:"";position:absolute;width:320px;height:320px;border:1px solid color-mix(in srgb,var(--accent) 24%,transparent);border-radius:50%;right:-100px;top:-155px;box-shadow:0 0 0 25px color-mix(in srgb,var(--accent) 4%,transparent),0 0 0 55px color-mix(in srgb,var(--accent) 3%,transparent);pointer-events:none;animation:slowOrbit 22s linear infinite}
-@keyframes slowOrbit{to{transform:rotate(360deg)}}
-.menu-item{transition:transform .25s,border-color .25s}
-.menu-item:hover{transform:translateX(5px);border-color:var(--accent)}
-.menu-item img{transition:transform .5s,filter .4s}
-.menu-item:hover img{transform:scale(1.04);filter:saturate(1.15)}
-.gallery img{transition:transform .45s,filter .45s,box-shadow .45s;cursor:zoom-in}
-.gallery img:hover{transform:scale(1.025);filter:saturate(1.15);box-shadow:0 12px 28px #0007;z-index:1}
-.info{transition:transform .3s,border-color .3s,box-shadow .3s}
-.info:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 14px 30px #0003}
-.reveal-ready .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1)}
-.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
-.reveal-ready .reveal[data-delay="1"]{transition-delay:.08s}.reveal-ready .reveal[data-delay="2"]{transition-delay:.16s}.reveal-ready .reveal[data-delay="3"]{transition-delay:.24s}
-.toast{animation:toastIn .25s ease-out}
-@keyframes toastIn{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap');
+:root{--bg:#100d0b;--panel:#18120f;--panel2:#241710;--text:#fff6e9;--muted:#d0b9a4;--accent:#ff7a22;--red:#b82918;--line:#694126;--head:'Barlow Condensed',Impact,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:115px}body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--text);font:15px/1.55 Arial,sans-serif}body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 8% 14%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 38%),radial-gradient(ellipse at 90% 72%,rgba(130,48,14,.16),transparent 40%)}a{color:inherit}button,input,textarea,select{font:inherit}h1,h2,h3,.eyebrow,.btn,.nav a,.themes button,.customize{font-family:var(--head);text-transform:uppercase}
+.studio{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 3%;background:#0c0908ed;border-bottom:1px solid #704326;backdrop-filter:blur(14px)}.studio strong{display:block;color:#ffb36d;font-size:.7rem;letter-spacing:.17em}.studio small{color:#c4ad99;font-size:.75rem}.themes{display:flex;gap:6px;flex-wrap:wrap}.themes button,.customize{cursor:pointer;border:1px solid #704326;background:#241811;color:#fff3e5;padding:8px 12px;font-size:.78rem;font-weight:800;transition:transform .2s,background .2s}.themes button.active{background:var(--accent);color:#1b1008;border-color:var(--accent)}.customize{color:var(--accent);border-color:var(--accent)}.themes button:hover,.customize:hover{transform:translateY(-2px)}
+.panel{display:none;position:fixed;z-index:50;right:14px;top:95px;width:min(330px,calc(100vw - 28px));max-height:calc(100vh - 110px);overflow:auto;background:#17100c;color:#fff0df;border:1px solid var(--accent);padding:18px;box-shadow:0 18px 70px #000c}.panel.open{display:block}.panel h2{margin:0;font-size:2rem}.setting{padding:11px 0;border-top:1px solid #52321f}.setting label{display:block;font-size:.8rem;margin-bottom:5px}.setting input,.setting select{width:100%;padding:9px;background:#241811;border:1px solid #704326;color:white}.setting input[type=color]{height:38px;padding:2px}.panel-actions{display:flex;gap:8px}.panel-actions button{flex:1;cursor:pointer}
+header{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 3%;background:var(--panel);border-bottom:1px solid var(--line);transition:box-shadow .25s}header.scrolled{box-shadow:0 12px 35px #0008}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}.logo{width:60px;height:60px;flex-shrink:0;border:2px solid #d7ad61;border-radius:50%;background:radial-gradient(circle at 35% 25%,#f6e4b3,#b18436 70%,#654117);color:#261809;display:grid;place-content:center;text-align:center;font:900 1.35rem/.8 var(--head);box-shadow:0 0 0 4px #d7ad611a}.logo small{display:block;font-size:.4rem;letter-spacing:.04em;margin-top:5px}.brandname{font:900 clamp(1.2rem,2.4vw,2rem)/.84 var(--head);text-transform:uppercase}.brandname span{color:var(--accent)}.brandname small{display:block;color:var(--muted);font:700 .52rem Arial;letter-spacing:.2em;margin-top:8px}.nav{display:flex;align-items:center;gap:clamp(10px,1.7vw,22px);flex-wrap:wrap}.nav a{font-size:.82rem;font-weight:800;text-decoration:none;white-space:nowrap}.nav a:hover,.nav a.active{color:var(--accent)}.nav .cta{background:var(--red);padding:10px 15px;color:white;border:1px solid #d64b2a}
+.page{display:none}.page.active{display:block}
+.hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(360px,.88fr) minmax(0,1.12fr);align-items:stretch;min-height:570px;overflow:hidden;background:#120c08 center/cover no-repeat;border-bottom:3px solid var(--accent)}
+body[data-theme="grit"] .hero{background-image:linear-gradient(90deg,#100b08 0%,#100b08f5 27%,#100b08b8 47%,#100b0833 75%,#100b0855 100%),linear-gradient(0deg,#080504aa,transparent 48%),url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=2200&q=90")}
+body[data-theme="cream"] .hero{background-image:linear-gradient(90deg,#fff9ef 0%,#fff9eff5 27%,#fff9efb8 47%,#fff9ef25 75%,#24130b22 100%),linear-gradient(0deg,#21130b55,transparent 50%),url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=2200&q=90")}
+body[data-theme="wood"] .hero{background-image:linear-gradient(90deg,#1d1009 0%,#1d1009f5 27%,#1d1009b8 48%,#1d100933 78%,#1d100955 100%),linear-gradient(0deg,#12080488,transparent 48%),url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2200&q=90")}
+.hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 72% 25%,#f4a35b16,transparent 35%),linear-gradient(120deg,transparent 40%,#0001 60%,transparent 80%);mix-blend-mode:screen}.hero-copy{position:relative;z-index:5;align-self:center;padding:clamp(35px,5vw,76px) clamp(25px,4vw,62px);max-width:760px;animation:copyIn .75s ease both}.eyebrow{color:var(--accent);font:800 .72rem Arial,sans-serif;letter-spacing:.25em}.hero h1{font-size:clamp(4.1rem,8vw,7.4rem);line-height:.78;letter-spacing:-.035em;margin:20px 0 24px;text-wrap:balance}.hero h1 span{display:block;color:var(--accent);font-style:italic;text-shadow:0 4px 25px #0005}.hero p{max-width:475px;color:var(--muted);font-size:1rem}.buttons{display:flex;gap:10px;margin-top:25px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--red);border:1px solid var(--red);padding:12px 20px;text-decoration:none;font-size:.9rem;font-weight:900;color:white;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 26px #0005;background:var(--accent);border-color:var(--accent);color:#1a0f08}.btn.secondary{background:#120c08a8;border-color:#9c6b45;color:#fff3e5}.hero-food-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:26px}.hero-food-tags span{padding:7px 10px;background:#100a08b8;border:1px solid #f078226b;color:#fff3e5;font:800 .73rem var(--head);letter-spacing:.06em;backdrop-filter:blur(7px)}.hero-food-tags span:before{content:"✦";color:var(--accent);margin-right:6px}
+.hero-img{position:relative;z-index:2;align-self:stretch;min-height:570px;overflow:hidden;background:linear-gradient(135deg,#23140b66,#0c0804aa)}.hero-img:after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(90deg,#100b0880,transparent 35%),linear-gradient(0deg,#08050366,transparent 45%)}.hero-img #heroFoodImage{position:absolute;z-index:1;right:7%;top:8%;width:74%;height:75%;min-height:0;object-fit:cover;object-position:center;border:1px solid #f7d5a277;box-shadow:0 24px 65px #000b;clip-path:polygon(5% 0,100% 0,100% 90%,92% 100%,0 100%,0 8%);transform:rotate(1.4deg);transition:transform .6s,filter .4s}.hero-img #heroSideFood{position:absolute;z-index:3;right:4%;bottom:5%;width:43%;height:34%;min-height:0;object-fit:cover;border:4px solid #f9ead7;box-shadow:0 17px 38px #000b;transform:rotate(-2deg);transition:transform .4s}.hero-img #heroThirdFood{position:absolute;z-index:2;left:1%;bottom:9%;width:37%;height:30%;min-height:0;object-fit:cover;border:3px solid #f9ead7;box-shadow:0 17px 38px #000b;transform:rotate(2deg);transition:transform .4s}.hero-img:hover #heroFoodImage{transform:rotate(0) scale(1.025);filter:saturate(1.15)}.hero-img:hover #heroSideFood,.hero-img:hover #heroThirdFood{transform:rotate(0) translateY(-5px)}
+.promise{position:relative;z-index:6;display:grid;grid-template-columns:repeat(3,1fr);background:var(--panel2);border-bottom:1px solid var(--line)}.promise div{text-align:center;padding:19px 10px;border-right:1px solid var(--line)}.promise b{display:block;font:800 1.35rem var(--head);letter-spacing:.03em}.promise span{font-size:.7rem;color:var(--muted);letter-spacing:.09em;text-transform:uppercase}
+.content{padding:clamp(42px,5vw,74px) 3%}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;border-bottom:2px solid var(--accent);padding-bottom:15px;margin-bottom:24px}.section-head h2{font-size:clamp(2.6rem,5vw,4.6rem);line-height:.85;margin:0}.section-head h2 span{color:var(--accent)}.section-head p{max-width:400px;color:var(--muted);font-size:.82rem;margin:0}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{position:relative;overflow:hidden;background:var(--panel);border:1px solid var(--line);box-shadow:0 10px 30px #0002;transition:transform .3s,border-color .3s,box-shadow .3s}.card:hover{transform:translateY(-7px);border-color:var(--accent);box-shadow:0 20px 38px #0006}.card img{display:block;width:100%;height:220px;object-fit:cover;transition:transform .65s,filter .3s}.card:hover img{transform:scale(1.06);filter:saturate(1.15)}.card div{padding:15px;border-top:3px solid var(--accent)}.card small{color:var(--accent);font-size:.66rem;font-weight:bold;letter-spacing:.13em}.card h3{font-size:1.65rem;line-height:.9;margin:7px 0}.card p{font-size:.78rem;color:var(--muted);margin:0}
+.smoke-banner{position:relative;isolation:isolate;overflow:hidden;padding:clamp(35px,5vw,65px) 5%;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:linear-gradient(90deg,#100906f5,#1b100be8 55%,#140a07cc),url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=85") center/cover;border-top:1px solid #a95c2b;border-bottom:1px solid #a95c2b}.smoke-banner:before{content:"";position:absolute;z-index:-1;inset:-30%;background:radial-gradient(ellipse at 20% 45%,#d6d0c515,transparent 35%),radial-gradient(ellipse at 70% 55%,#d6d0c512,transparent 30%);filter:blur(16px);animation:smokeDrift 12s ease-in-out infinite alternate}.smoke-banner h2{font-size:clamp(2.4rem,5vw,4.7rem);line-height:.88;margin:0}.smoke-banner h2 span{color:var(--accent)}.smoke-banner p{max-width:470px;color:#e1c9b3;margin:12px 0 0}
+.story{display:grid;grid-template-columns:1fr 1fr;background:var(--panel2);overflow:hidden}.story img{display:block;width:100%;height:100%;min-height:330px;object-fit:cover;transition:transform .8s}.story:hover img{transform:scale(1.025)}.story>div{align-self:center;padding:clamp(28px,5vw,64px)}.story h2{font-size:clamp(2.8rem,5vw,5rem);line-height:.85;margin:12px 0}.story h2 span{color:var(--accent)}.story p{color:var(--muted);max-width:520px}
+.pagehead{position:relative;overflow:hidden;padding:48px 3% 34px;background:linear-gradient(110deg,var(--panel2),var(--panel));border-bottom:3px solid var(--accent)}.pagehead:after{content:"";position:absolute;right:-80px;top:-160px;width:330px;height:330px;border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);border-radius:50%;box-shadow:0 0 0 24px color-mix(in srgb,var(--accent) 4%,transparent),0 0 0 55px color-mix(in srgb,var(--accent) 3%,transparent);pointer-events:none}.pagehead h1{font-size:clamp(3.7rem,7vw,6.5rem);line-height:.85;margin:12px 0}.pagehead p{color:var(--muted);max-width:720px}.menu-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}.menu-item{display:grid;grid-template-columns:125px 1fr;gap:15px;padding:16px 0;border-bottom:1px solid var(--line);transition:transform .25s}.menu-item:hover{transform:translateX(4px)}.menu-item img{width:125px;height:100px;object-fit:cover}.menu-item h3{font-size:1.55rem;line-height:.9;margin:4px 0 8px}.menu-item p{color:var(--muted);font-size:.8rem;margin:0 0 6px}.pending{font-size:.68rem;color:var(--accent);font-weight:bold;letter-spacing:.05em}.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.gallery img{width:100%;height:240px;object-fit:cover;border:1px solid var(--line);transition:transform .35s,filter .35s}.gallery img:hover{transform:scale(1.025);filter:saturate(1.15)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.info{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--accent);padding:clamp(20px,3vw,30px)}.info h2{font-size:2.2rem;margin-top:0}.info p{color:var(--muted)}.info label{display:block;color:var(--muted);margin:12px 0;font-size:.8rem}.info input,.info textarea{display:block;width:100%;padding:11px;background:var(--bg);border:1px solid var(--line);color:var(--text);margin-top:5px}.info textarea{min-height:90px}
+.footer{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:28px 3%;background:#0b0807;border-top:3px solid var(--accent);color:var(--muted);font-size:.78rem}.footer p{margin:0}.footer strong{font:900 1.6rem var(--head);color:white}.footer a:hover{color:var(--accent)}.toast{display:none;position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:60;background:#100b08;padding:12px 18px;border:1px solid var(--accent);box-shadow:0 10px 30px #0008}.toast.show{display:block}
+body[data-theme="cream"]{--bg:#f4eadb;--panel:#fff9ef;--panel2:#e8d7bf;--text:#1a1714;--muted:#66594b;--accent:#a91f17;--red:#ad2017;--line:#d0b89b;--head:Oswald,Arial,sans-serif}body[data-theme="cream"] .studio,body[data-theme="cream"] .panel{background:#191613;color:white}body[data-theme="cream"] .hero-food-tags span{color:white}body[data-theme="cream"] .hero-copy p{color:#5b4b3d}body[data-theme="cream"] .hero-img{background:#d4b89a}body[data-theme="cream"] .hero-img:after{background:linear-gradient(90deg,#fff9ef22,transparent 60%),linear-gradient(0deg,#0004,transparent 45%)}body[data-theme="cream"] .btn.secondary{background:#fff9efdd;color:#241710;border-color:#a91f17}body[data-theme="wood"]{--bg:#21170f;--panel:#2b1c12;--panel2:#3a281a;--text:#fff0d8;--muted:#d4bda1;--accent:#d9a66a;--red:#5b2c16;--line:#725033;--head:Oswald,Arial,sans-serif}body[data-theme="wood"] header,body[data-theme="wood"] .footer{background:#140c07}body.compact .content{padding-top:25px;padding-bottom:25px}body.rounded .card,body.rounded .card img,body.rounded .btn{border-radius:10px;overflow:hidden}
+@keyframes copyIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}@keyframes smokeDrift{from{transform:translate3d(-2%,0,0) scale(1)}to{transform:translate3d(3%,-2%,0) scale(1.08)}}.motion-progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--red),var(--accent),#ffd18b);z-index:100;box-shadow:0 0 12px var(--accent)}.reveal-ready .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
+@media(max-width:1000px){header{align-items:flex-start;flex-wrap:wrap}.nav{width:100%;gap:14px}.hero{grid-template-columns:minmax(310px,.9fr) minmax(0,1.1fr);min-height:510px}.hero-copy{padding:35px 26px}.hero-img{min-height:510px}.hero h1{font-size:clamp(3.8rem,7.6vw,6rem)}.hero-img #heroFoodImage{width:80%;height:70%}.hero-img #heroSideFood{width:48%;height:32%}.cards{gap:10px}.card img{height:190px}}
+@media(max-width:760px){.studio>div:first-child{width:100%}.themes{flex:1}.themes button{flex:1;padding:8px 5px;font-size:.68rem}.hero{grid-template-columns:1fr;min-height:0;background-position:center}.hero-copy{padding:40px 25px 28px;max-width:100%;background:linear-gradient(90deg,#100b08d9,#100b0880)}.hero h1{font-size:clamp(4rem,13vw,6.2rem)}.hero-img{min-height:340px;height:340px;background:#120b07aa}.hero-img:after{background:linear-gradient(0deg,#100b08aa,transparent 35%)}.hero-img #heroFoodImage{width:68%;height:82%;top:3%;right:10%}.hero-img #heroSideFood{width:42%;height:40%;right:4%;bottom:4%}.hero-img #heroThirdFood{width:34%;height:33%;left:3%;bottom:7%}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.story{grid-template-columns:1fr}.story img{max-height:300px;min-height:250px}.story>div{padding:30px}.menu-list{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery img{height:190px}.contact-grid{grid-template-columns:1fr}.promise b{font-size:1.12rem}}
+@media(max-width:480px){.brand .logo{width:49px;height:49px}.brandname{font-size:1.25rem}.nav{gap:10px}.nav a{font-size:.72rem}.nav .cta{padding:8px 10px}.hero-copy{padding:35px 20px 25px}.hero h1{font-size:clamp(3.4rem,15vw,4.8rem)}.hero p{font-size:.93rem}.hero-img{min-height:290px;height:290px}.hero-img #heroFoodImage{width:76%;height:78%;right:7%}.hero-img #heroSideFood{width:45%;height:39%}.hero-img #heroThirdFood{width:37%;height:32%}.promise div{padding:14px 5px}.promise b{font-size:.95rem}.promise span{font-size:.57rem;letter-spacing:.03em}.content{padding:38px 5%}.section-head{display:block}.section-head p{margin-top:12px}.card img{height:170px}.card div{padding:11px}.card h3{font-size:1.4rem}.smoke-banner{padding:34px 6%}.menu-item{grid-template-columns:95px 1fr;gap:12px}.menu-item img{width:95px;height:88px}.panel{top:150px}.footer{display:block}.footer p+p{margin-top:12px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal-ready .reveal{opacity:1;transform:none}}
-
-
-/* Food-led hero composition and theme-specific photography */
-.hero{position:relative;isolation:isolate;overflow:hidden}
-.hero-img{position:absolute;inset:0 0 0 34%;min-height:100%;z-index:-1}
-.hero-img img{min-height:100%;height:100%;object-position:center;filter:saturate(1.12) contrast(1.04)}
-.hero-img:after{background:linear-gradient(90deg,var(--panel) 0%,color-mix(in srgb,var(--panel) 88%,transparent) 18%,transparent 68%),linear-gradient(0deg,#0008,transparent 42%)}
-.hero-copy{min-height:470px;max-width:790px;padding-top:clamp(45px,7vw,82px);padding-bottom:clamp(35px,5vw,62px)}
-.hero h1{max-width:760px;text-wrap:balance}
-.hero .hero-copy>p{max-width:480px}
-.hero-food-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:25px;max-width:580px}
-.hero-food-tags span{font:700 .7rem var(--head);text-transform:uppercase;letter-spacing:.06em;padding:7px 10px;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);background:#0b0909b8;color:#fff3e7;backdrop-filter:blur(8px)}
-.hero-food-tags span:before{content:"✦";color:var(--accent);margin-right:6px}
-.hero-img:before{z-index:1}
-@media(max-width:850px){.hero-img{inset:0;opacity:.5}.hero-img:after{background:linear-gradient(90deg,var(--panel) 0%,color-mix(in srgb,var(--panel) 72%,transparent) 55%,#0002),linear-gradient(0deg,var(--panel),transparent 65%)}.hero-copy{min-height:500px;max-width:100%;position:relative}.hero h1{max-width:650px}}
-@media(max-width:560px){.hero-copy{min-height:520px;padding-top:42px}.hero h1{font-size:clamp(3.6rem,16vw,5rem)}.hero-food-tags{gap:6px}.hero-food-tags span{font-size:.62rem;padding:6px 8px}}
-
-
-/* Food-first hero: feature the burger, fries and theme-specific secondary dish. */
-.hero-img .hero-side-food{position:absolute;z-index:4;right:4%;bottom:5%;width:31%;height:30%;min-height:0;object-fit:cover;border:3px solid #f8e8d4;border-radius:4px;box-shadow:0 14px 36px #0009;transform:rotate(2deg);transition:transform .4s,border-color .3s}
-.hero-img:hover .hero-side-food{transform:rotate(0) scale(1.035);border-color:var(--accent)}
-.hero-img:after{z-index:2}
-.hero-img:before{z-index:3}
-@media(max-width:850px){.hero-img .hero-side-food{right:5%;bottom:7%;width:34%;height:33%}}
-@media(max-width:560px){.hero-img .hero-side-food{width:38%;height:34%;right:4%;bottom:5%}}
-
-
-/* Locked-in concept restoration: bold food collage, full featured favourites, no tiny inset-only food. */
-.hero{display:grid;grid-template-columns:minmax(350px,.82fr) minmax(0,1.18fr);min-height:520px;position:relative;overflow:hidden}
-.hero-copy{position:relative;z-index:5;padding:clamp(36px,5vw,76px) clamp(28px,4vw,64px);max-width:650px}
-.hero-img{position:relative;inset:auto;z-index:1;min-height:520px;height:100%;overflow:hidden;background:radial-gradient(ellipse at 70% 55%,color-mix(in srgb,var(--accent) 20%,#1b120d),#100d0b 72%)}
-.hero-img:after{content:"";position:absolute;inset:0;z-index:4;background:linear-gradient(90deg,var(--panel) 0%,transparent 36%),linear-gradient(0deg,#08060565,transparent 40%);pointer-events:none}
-.hero-img #heroFoodImage{position:absolute;z-index:1;right:4%;top:5%;width:73%;height:74%;min-height:0;object-fit:cover;object-position:center;border:1px solid #f7d5a24d;box-shadow:0 20px 55px #0008;clip-path:polygon(5% 0,100% 0,100% 90%,92% 100%,0 100%,0 8%);transform:rotate(1.5deg);transition:transform .65s cubic-bezier(.2,.8,.2,1),filter .4s}
-.hero-img #heroSideFood{position:absolute;z-index:3;right:4%;bottom:5%;width:43%;height:33%;min-height:0;object-fit:cover;border:3px solid #f4dfc4;border-radius:3px;box-shadow:0 16px 38px #0009;transform:rotate(-2deg);transition:transform .45s}
-.hero-img #heroThirdFood{position:absolute;z-index:2;left:2%;bottom:9%;width:38%;height:31%;min-height:0;object-fit:cover;border:2px solid #f4dfc4;border-radius:3px;box-shadow:0 14px 34px #0008;transform:rotate(2deg);transition:transform .45s}
-.hero-img:hover #heroFoodImage{transform:rotate(0) scale(1.025);filter:saturate(1.12)}
-.hero-img:hover #heroSideFood{transform:rotate(0) translateY(-5px)}
-.hero-img:hover #heroThirdFood{transform:rotate(0) translateY(-5px)}
-.hero-food-tags{position:relative;z-index:6}
-.promise{position:relative;z-index:6}
-#featured .card img{height:220px;min-height:220px;object-fit:cover}
-@media(max-width:850px){.hero{grid-template-columns:1fr;min-height:0}.hero-copy{padding:42px 28px 30px;max-width:100%}.hero-img{min-height:360px;height:360px}.hero-img:after{background:linear-gradient(0deg,var(--panel),transparent 32%)}.hero-img #heroFoodImage{width:76%;height:82%;top:4%;right:5%}.hero-img #heroSideFood{width:42%;height:38%;right:4%;bottom:5%}.hero-img #heroThirdFood{width:38%;height:34%;left:3%;bottom:8%}}
-@media(max-width:560px){.hero-copy{padding:34px 20px 22px}.hero h1{font-size:clamp(3.5rem,16vw,5rem)}.hero-img{min-height:300px;height:300px}.hero-img #heroFoodImage{width:80%;height:78%}.hero-img #heroSideFood{width:45%;height:37%}.hero-img #heroThirdFood{width:39%;height:32%}}
-
-
-/* === APPROVED THREE-CONCEPT ART DIRECTION === */
-body{background:var(--bg)}
-/* Concept 01: black/orange, poster-style wings hero and featured food row */
-body[data-theme="grit"] .hero{grid-template-columns:.92fr 1.08fr;min-height:520px;background:#100e0c}
-body[data-theme="grit"] .hero-img{min-height:520px;background:#17100c}
-body[data-theme="grit"] .hero-img:after{background:linear-gradient(90deg,#100e0c 0%,#100e0c20 38%,transparent 66%),linear-gradient(0deg,#08060560,transparent 48%)}
-body[data-theme="grit"] .hero-img #heroFoodImage{top:0;right:0;width:100%;height:100%;border:0;clip-path:none;transform:none;box-shadow:none;object-position:center}
-body[data-theme="grit"] .hero-img #heroSideFood{width:36%;height:29%;right:4%;bottom:5%;transform:rotate(-3deg)}
-body[data-theme="grit"] .hero-img #heroThirdFood{width:34%;height:28%;left:3%;bottom:8%;transform:rotate(2deg)}
-body[data-theme="grit"] .hero-copy{padding-left:clamp(30px,4vw,68px)}
-body[data-theme="grit"] .hero h1{font-size:clamp(4.2rem,7.4vw,7.1rem);max-width:520px}
-body[data-theme="grit"] .promise{background-image:linear-gradient(#21170fe8,#21170fe8),url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80');background-color:#251a12}
-body[data-theme="grit"] .content{background:#0c0b0a}
-body[data-theme="grit"] .section-head h2{font-size:clamp(2.7rem,5vw,4.5rem)}
-body[data-theme="grit"] .card{background:#100f0d;border-color:#5b321c}
-body[data-theme="grit"] .card div{border-top:2px solid var(--accent)}
-body[data-theme="grit"] .story{background:#19110d url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=85') center/cover}
-body[data-theme="grit"] .story>div{background:linear-gradient(90deg,#100d0bea,#100d0bc9)}
-/* Concept 02: cream/red editorial menu with a large burger and balanced 2x2 food tiles */
-body[data-theme="cream"] .hero{grid-template-columns:.98fr 1.02fr;min-height:500px;background:#f6eddf}
-body[data-theme="cream"] .hero-copy{padding:clamp(30px,4vw,58px);max-width:610px}
-body[data-theme="cream"] .hero h1{font-size:clamp(4rem,7vw,6.7rem);color:#171310}
-body[data-theme="cream"] .hero h1 span{color:#a51e17}
-body[data-theme="cream"] .hero-img{min-height:500px;background:#eee0cb}
-body[data-theme="cream"] .hero-img:after{background:linear-gradient(90deg,#f6eddf 0%,#f6eddf18 28%,transparent 55%),linear-gradient(0deg,#f6eddf20,transparent 40%)}
-body[data-theme="cream"] .hero-img #heroFoodImage{top:0;right:0;width:100%;height:100%;min-height:0;clip-path:none;transform:none;border:0;box-shadow:none;object-position:center}
-body[data-theme="cream"] .hero-img #heroSideFood{width:34%;height:27%;right:4%;bottom:5%;border-color:#fff7eb}
-body[data-theme="cream"] .hero-img #heroThirdFood{width:31%;height:24%;left:4%;bottom:8%;border-color:#fff7eb}
-body[data-theme="cream"] .hero-food-tags span{background:#fff8ee;color:#2b2019;border-color:#cdb69b}
-body[data-theme="cream"] .promise{background:#e8d7bf;border-bottom:1px solid #d3b99b}
-body[data-theme="cream"] .promise div{border-color:#d3b99b}
-body[data-theme="cream"] .content{background:#f6eddf}
-body[data-theme="cream"] #featured{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-body[data-theme="cream"] #featured .card{display:grid;grid-template-columns:1fr 1fr;background:#fff8ee;border:1px solid #d7c2a8}
-body[data-theme="cream"] #featured .card img{height:150px;min-height:150px}
-body[data-theme="cream"] #featured .card div{align-self:center;border-top:0;border-left:3px solid #a51e17;min-height:100%;display:flex;flex-direction:column;justify-content:center}
-body[data-theme="cream"] .story{background:#2a1712 url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1600&q=85') center/cover}
-body[data-theme="cream"] .story>div{background:#1c110ee0}
-body[data-theme="cream"] .story h2{color:#fff7eb}
-body[data-theme="cream"] .story h2 span{color:#f0c8a5}
-/* Concept 03: rustic wood, carved-sign feeling and warm amber light */
-body[data-theme="wood"]{background:#21140c url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=85') center/cover fixed}
-body[data-theme="wood"] header{background:#170e09eF;border-bottom-color:#8c6036}
-body[data-theme="wood"] .hero{grid-template-columns:1fr;min-height:510px;background:linear-gradient(90deg,#1b1009d9,#1b100940),url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=85') center/cover}
-body[data-theme="wood"] .hero-copy{min-height:510px;max-width:760px;padding:50px clamp(28px,5vw,78px);background:linear-gradient(90deg,#1b1009e8,transparent)}
-body[data-theme="wood"] .hero h1{display:inline-block;padding:18px 24px;margin:18px 0;background:linear-gradient(#4a2d1bdf,#1d110ceF);border:7px double #bd9465;box-shadow:0 10px 24px #0009;color:#fff0d8;text-shadow:2px 3px #24140b;font-size:clamp(3.7rem,6vw,6.3rem)}
-body[data-theme="wood"] .hero h1 span{color:#e6c79e;font-style:normal}
-body[data-theme="wood"] .hero-img{position:absolute;inset:0;z-index:0;min-height:510px;height:100%;background:transparent;opacity:.92}
-body[data-theme="wood"] .hero-img:after{background:linear-gradient(90deg,#1b1009 0%,#1b100988 35%,#1b100930 100%),linear-gradient(0deg,#170c08b0,transparent 45%)}
-body[data-theme="wood"] .hero-img #heroFoodImage{top:17%;right:4%;width:38%;height:58%;clip-path:none;border:4px solid #8e6137;box-shadow:0 14px 35px #000b;transform:rotate(2deg)}
-body[data-theme="wood"] .hero-img #heroSideFood{width:27%;height:25%;right:4%;bottom:5%;border-color:#bd9465}
-body[data-theme="wood"] .hero-img #heroThirdFood{width:25%;height:22%;left:47%;bottom:7%;border-color:#bd9465}
-body[data-theme="wood"] .hero-copy{z-index:5}
-body[data-theme="wood"] .promise{background:#2c1a10f2;border-bottom:2px solid #c18a4f}
-body[data-theme="wood"] .content{background:#1b1009eF}
-body[data-theme="wood"] .section-head h2{display:inline-block;padding:10px 22px;background:#b58a5b;color:#20140c;box-shadow:0 4px 0 #6f472b}
-body[data-theme="wood"] .section-head h2 span{color:#fff0d8}
-body[data-theme="wood"] .card{background:#2b1a10;border-color:#a77a4b}
-body[data-theme="wood"] .card div{border-color:#c18a4f}
-body[data-theme="wood"] .story{background:#1a100be8 url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=85') center/cover}
-body[data-theme="wood"] .story>div{background:#1b1009e8}
-body[data-theme="wood"] .story h2{color:#f5e3c7}
-body[data-theme="wood"] .story h2 span{color:#e2b781}
-body[data-theme="wood"] .footer{background:#120b07f5;border-top-color:#b47a43}
-/* Keep the visual reference intact on smaller screens */
-@media(max-width:850px){
- body[data-theme="grit"] .hero{grid-template-columns:1fr}
- body[data-theme="grit"] .hero-img{position:absolute;inset:0;min-height:100%;opacity:.55}
- body[data-theme="grit"] .hero-copy{min-height:500px;background:linear-gradient(90deg,#100e0cf5,#100e0c55)}
- body[data-theme="cream"] .hero{grid-template-columns:1fr}
- body[data-theme="cream"] .hero-copy{min-height:370px}
- body[data-theme="cream"] .hero-img{min-height:310px;height:310px}
- body[data-theme="cream"] #featured .card{grid-template-columns:1fr}
- body[data-theme="cream"] #featured .card div{border-left:0;border-top:3px solid #a51e17}
- body[data-theme="wood"] .hero-copy{min-height:500px;background:linear-gradient(90deg,#1b1009ed,#1b100988)}
- body[data-theme="wood"] .hero-img{position:absolute;inset:0;min-height:500px}
- body[data-theme="wood"] .hero-img #heroFoodImage{top:24%;right:3%;width:48%;height:45%}
- body[data-theme="wood"] .hero-img #heroSideFood{width:34%;height:24%}
- body[data-theme="wood"] .hero-img #heroThirdFood{left:45%;width:31%;height:20%}
-}
-@media(max-width:560px){
- body[data-theme="cream"] #featured{grid-template-columns:1fr}
- body[data-theme="wood"] .hero h1{font-size:3.3rem;padding:12px}
- body[data-theme="wood"] .hero-img #heroFoodImage{top:34%;height:38%;width:55%}
-}
-
-
-/* Match the reference compositions: one hero food photograph per concept;
-   burgers, fries, strips and lasagna are featured in the cards below. */
-body[data-theme="grit"] .hero-img #heroSideFood,
-body[data-theme="grit"] .hero-img #heroThirdFood,
-body[data-theme="cream"] .hero-img #heroSideFood,
-body[data-theme="cream"] .hero-img #heroThirdFood,
-body[data-theme="wood"] .hero-img #heroSideFood,
-body[data-theme="wood"] .hero-img #heroThirdFood{display:none}
-body[data-theme="grit"] #featured,
-body[data-theme="wood"] #featured{grid-template-columns:repeat(4,minmax(0,1fr))}
-body[data-theme="grit"] #featured .card img,
-body[data-theme="wood"] #featured .card img{height:190px;min-height:190px}
-body[data-theme="wood"] .hero-img #heroFoodImage{width:43%;height:66%;top:14%;right:4%;clip-path:none}
-@media(max-width:850px){
- body[data-theme="grit"] #featured,
- body[data-theme="wood"] #featured{grid-template-columns:repeat(2,minmax(0,1fr))}
- body[data-theme="wood"] .hero-img #heroFoodImage{width:53%;height:48%;top:28%;right:3%}
-}
-
-
-/* Fill the dark hero with burger photography instead of empty flat black. */
-body[data-theme="grit"] .hero{
- background:
-  linear-gradient(90deg,#100d0bf5 0%,#100d0be8 24%,#100d0b99 45%,#100d0b20 74%,#100d0b55 100%),
-  linear-gradient(0deg,#100d0b66,transparent 55%),
-  url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=2200&q=90") center 46%/cover no-repeat;
-}
-body[data-theme="grit"] .hero-img{
- background:linear-gradient(90deg,#100d0b35,transparent 40%),transparent;
-}
-body[data-theme="grit"] .hero-img:after{
- background:linear-gradient(90deg,#100d0b35 0%,transparent 38%),linear-gradient(0deg,#08060535,transparent 50%);
-}
-body[data-theme="grit"] .hero-copy{
- background:linear-gradient(90deg,#100d0be8 0%,#100d0bca 62%,#100d0b00 100%);
-}
-@media(max-width:850px){
- body[data-theme="grit"] .hero{
-  background:
-   linear-gradient(90deg,#100d0be8 0%,#100d0b99 60%,#100d0b44 100%),
-   linear-gradient(0deg,#100d0bce 0%,transparent 80%),
-   url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1500&q=88") center/cover no-repeat;
- }
- body[data-theme="grit"] .hero-copy{background:linear-gradient(90deg,#100d0bc7,#100d0b60)}
-}
-
 </style></head>
 <body data-theme="grit">
 <div class="motion-progress" id="motionProgress" aria-hidden="true"></div>
@@ -264,12 +37,12 @@ body[data-theme="grit"] .hero-copy{
 <aside class="panel" id="panel"><h2>Customize</h2><p style="color:var(--muted);font-size:.8rem">Adjust the live preview.</p><div class="setting"><label for="business">Business name</label><input id="business" value="JJ’s Wings & Things"></div><div class="setting"><label for="headline">Hero headline (use | to split lines)</label><input id="headline" value="JJ’s|Wings & Things"></div><div class="setting"><label for="accent">Accent colour</label><input id="accent" type="color" value="#f07822"></div><div class="setting"><label for="background">Background colour</label><input id="background" type="color" value="#100f0e"></div><div class="setting"><label for="font">Heading font</label><select id="font"><option value="condensed">Bold condensed</option><option value="serif">Classic serif</option><option value="sans">Clean sans-serif</option></select></div><div class="setting"><label for="spacing">Section spacing</label><select id="spacing"><option value="normal">Normal</option><option value="compact">Compact</option></select></div><div class="setting"><label for="corners">Card corners</label><select id="corners"><option value="sharp">Sharp poster style</option><option value="rounded">Rounded</option></select></div><div class="panel-actions"><button class="btn" id="reset">Reset</button><button class="btn secondary" id="save">Save locally</button></div></aside>
 <header><a class="brand" href="#home" data-page="home"><div class="logo">JJ<small>WINGS & THINGS</small></div><span class="brandname" id="brandname">JJ’s <span>Wings</span><br>& Things<small>FORT HOPE, ONTARIO</small></span></a><nav class="nav"><a href="#home" data-page="home" class="active">Home</a><a href="#menu" data-page="menu">Menu</a><a href="#about" data-page="about">About</a><a href="#gallery" data-page="gallery">Gallery</a><a href="#contact" data-page="contact">Contact</a><a class="cta" href="#menu" data-page="menu">View Menu</a></nav></header>
 <main>
-<section class="page active" id="page-home"><div class="hero"><div class="hero-copy"><div class="eyebrow">Fort Hope, Ontario</div><h1 id="heroHeading">JJ’s <span>Wings & Things</span></h1><p>Wings, fries, poutine, nachos with cheese sauce, burgers, smokies and weekly specials.</p><div class="buttons"><a class="btn" href="#menu" data-page="menu">View Menu</a><a class="btn secondary" href="#contact" data-page="contact">Contact JJ</a></div><div class="hero-food-tags"><span>Wings</span><span>Burgers</span><span>Fries</span><span>Poutine</span></div></div><div class="hero-img"><img id="heroFoodImage" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1800&q=88" alt="Juicy cheeseburger with fresh toppings"><img class="hero-side-food" id="heroSideFood" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=85" alt="Golden crispy seasoned fries"><img id="heroThirdFood" src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=700&q=85" alt="Sticky barbecue wings"></div></div><div class="promise"><div><b>Delicious Meals</b><span>Wings, burgers, more</span></div><div><b>Local Business</b><span>Proudly Fort Hope</span></div><div><b>Good Food</b><span>Brings people together</span></div></div><section class="content"><div class="section-head"><h2>Featured <span>Favourites</span></h2><p>A bold, food-first design inspired by JJ’s branding. Confirm menu details before publishing.</p></div><div class="cards" id="featured"></div></section><section class="story"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=85" alt="Warm restaurant interior"><div><div class="eyebrow">Good food · Community first</div><h2>Good Food.<br><span>Stronger Community.</span></h2><p>This space can share JJ’s own story and what makes his food special.</p><a class="btn" href="#about" data-page="about">About JJ’s</a></div></section></section>
+<section class="page active" id="page-home"><div class="hero"><div class="hero-copy"><div class="eyebrow">Fort Hope · Smokehouse-inspired takeout</div><h1 id="heroHeading">JJ’s <span>Wings & Things</span></h1><p>Big flavour. Saucy wings. Loaded comfort food. Your local stop for wings, burgers, fries, poutine, nachos, smokies and weekly specials.</p><div class="buttons"><a class="btn" href="#menu" data-page="menu">View Menu</a><a class="btn secondary" href="#contact" data-page="contact">Contact JJ</a></div><div class="hero-food-tags"><span>Wings</span><span>Burgers</span><span>Loaded Fries</span><span>Weekly Specials</span></div></div><div class="hero-img"><img id="heroFoodImage" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1800&q=88" alt="Juicy cheeseburger with fresh toppings"><img class="hero-side-food" id="heroSideFood" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=85" alt="Golden crispy seasoned fries"><img id="heroThirdFood" src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=700&q=85" alt="Sticky barbecue wings"></div></div><div class="promise"><div><b>Smoky Style</b><span>Big, bold comfort food</span></div><div><b>Fort Hope Proud</b><span>Local flavour, close to home</span></div><div><b>Made for Cravings</b><span>Wings, burgers & more</span></div></div><section class="content"><div class="section-head"><h2>Featured <span>Favourites</span></h2><p>Wings, burgers and comfort-food favourites. Ask JJ about current weekly specials and availability.</p></div><div class="cards" id="featured"></div></section><section class="smoke-banner"><div><div class="eyebrow">Smoky BBQ spirit · Fort Hope</div><h2>Bring on the <span>bold flavour.</span></h2><p>Craving wings, a burger, poutine or something from the weekly specials? Check the menu and message JJ to confirm what’s cooking.</p></div><a class="btn" href="https://www.instagram.com/jjswings2026/" target="_blank" rel="noopener">Message JJ on Instagram ↗</a></section><section class="story"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=85" alt="Warm restaurant interior"><div><div class="eyebrow">Local flavour · Community first</div><h2>Good Food.<br><span>Fort Hope Roots.</span></h2><p>JJ’s Wings & Things brings the comfort-food favourites people crave to Fort Hope. Check in for weekly specials and confirm current options before ordering.</p><a class="btn" href="#about" data-page="about">About JJ’s</a></div></section></section>
 <section class="page" id="page-menu"><div class="pagehead"><div class="eyebrow">Fort Hope, Ontario</div><h1>View Menu</h1><p>The supplied menu poster's price period ended September 30, 2026. Current prices and availability must be confirmed before launch.</p></div><section class="content"><div class="menu-list" id="menuList"></div><p class="pending">Current prices, portions and availability need owner confirmation.</p></section></section>
-<section class="page" id="page-about"><div class="pagehead"><div class="eyebrow">About the business</div><h1>Local Flavour</h1><p>This page is ready for JJ’s approved business story, real kitchen photos and community details.</p></div><section class="content"><div class="story"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=85" alt="Restaurant table setting"><div><h2>More Than<br><span>Just Great Food.</span></h2><p>Replace this placeholder with JJ’s own words before launch.</p><a class="btn" href="#contact" data-page="contact">Get in touch</a></div></div></section></section>
+<section class="page" id="page-about"><div class="pagehead"><div class="eyebrow">Fort Hope, Ontario</div><h1>Local Flavour</h1><p>Big cravings, comfort-food favourites and a local takeout spot rooted in Fort Hope.</p></div><section class="content"><div class="story"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=85" alt="Restaurant table setting"><div><h2>Made for<br><span>Big Cravings.</span></h2><p>From wings and burgers to poutine, nachos, smokies and weekly specials, JJ’s is all about satisfying comfort food. Follow the page for the latest updates and confirm today’s menu before ordering.</p><a class="btn" href="https://www.instagram.com/jjswings2026/" target="_blank" rel="noopener">Follow on Instagram ↗</a></div></div></section></section>
 <section class="page" id="page-gallery"><div class="pagehead"><div class="eyebrow">Food photos</div><h1>Gallery</h1><p>Showcase real food photos, weekly specials and customer favourites.</p></div><section class="content"><div class="gallery" id="gallery"></div><p class="pending">Illustrative photos should be replaced with actual dish photos where possible.</p></section></section>
-<section class="page" id="page-contact"><div class="pagehead"><div class="eyebrow">Fort Hope, Ontario</div><h1>Contact JJ’s</h1><p>Contact details and ordering links can be added after JJ confirms the preferred process.</p></div><section class="content"><div class="contact-grid"><div class="info"><h2>Business Details</h2><p><b>Location</b><br>Fort Hope, Ontario</p><p><b>Phone / Messenger</b><br>Confirm with owner</p><p><b>Hours</b><br>To be confirmed</p><p><b>Instagram</b><br>@jjswings2026 — confirm before launch.</p></div><div class="info"><h2>Send an Enquiry</h2><form id="contactForm"><label>Your name<input required placeholder="Your name"></label><label>Message<textarea required placeholder="Your message"></textarea></label><button class="btn" type="submit">Preview Message</button></form><p class="pending">Demo only. No message is sent.</p></div></div></section></section>
-</main><footer class="footer"><p><strong id="footername">JJ’s Wings & Things</strong><br>Fort Hope, Ontario</p><p>Website concept for owner review<br>Current menu and business details require confirmation.</p><p><a href="#home" data-page="home">Back to top ↑</a></p></footer><div class="toast" id="toast"></div>
+<section class="page" id="page-contact"><div class="pagehead"><div class="eyebrow">Fort Hope, Ontario</div><h1>Let’s Talk Food</h1><p>For current menu options, weekly specials and ordering details, reach out directly through JJ’s Instagram page.</p></div><section class="content"><div class="contact-grid"><div class="info"><div class="eyebrow">Find JJ’s</div><h2>Fort Hope, Ontario</h2><p>Follow the Instagram profile for menu updates, specials and ordering information.</p><p><b>Instagram</b><br><a href="https://www.instagram.com/jjswings2026/" target="_blank" rel="noopener">@jjswings2026 ↗</a></p><p class="pending">Phone number and business hours have not been confirmed.</p><a class="btn" href="https://www.instagram.com/jjswings2026/" target="_blank" rel="noopener">Open Instagram ↗</a></div><div class="info"><div class="eyebrow">Before you order</div><h2>Check Today’s Menu</h2><p>Menu items and weekly specials may change. Message JJ to confirm availability, prices and the best way to place an order.</p><a class="btn" href="https://www.instagram.com/jjswings2026/" target="_blank" rel="noopener">Ask About Today’s Specials ↗</a></div></div></section></section>
+</main><footer class="footer"><p><strong id="footername">JJ’s Wings & Things</strong><br>Fort Hope, Ontario</p><p>Smokehouse-inspired takeout · Fort Hope, Ontario<br>Follow for specials and current menu updates.</p><p><a href="#home" data-page="home">Back to top ↑</a></p></footer><div class="toast" id="toast"></div>
 <script>
 const items=[
 ["BBQ Wings","Bold flavours","Saucy wings; confirm available flavours.","https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85"],
@@ -288,9 +61,9 @@ function render(){const card=d=>'<article class="card"><img loading="lazy" src="
 /* Theme-specific food photography: each design has its own visual food mood. */
 const photoThemes={
  grit:{
-  hero:"https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=1600&q=88",
-  sideFood:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=85",
-  thirdFood:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=85",
+  hero:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1800&q=90",
+  sideFood:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=88",
+  thirdFood:"https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=88",
   foods:["https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=85"]
  },
  cream:{
@@ -308,7 +81,7 @@ const photoThemes={
 };
 function applyFoodPhotography(theme){
  const chosen=photoThemes[theme]||photoThemes.grit;
- const hero=document.getElementById("heroFoodImage");if(hero){hero.src=chosen.hero;hero.alt=theme==="wood"?"Smoky barbecue ribs and grilled meat":theme==="cream"?"Cheeseburger and fresh toppings":"Juicy cheeseburger with fresh toppings"}const side=document.getElementById("heroSideFood");if(side){side.src=chosen.sideFood;side.alt=theme==="wood"?"Burrito wrap":theme==="cream"?"Crispy chicken strips":"Golden crispy seasoned fries"}const third=document.getElementById("heroThirdFood");if(third){third.src=chosen.thirdFood;third.alt=theme==="wood"?"Rustic pizza":theme==="cream"?"Lasagna":"Barbecue wings"}
+ const hero=document.getElementById("heroFoodImage");if(hero){hero.src=chosen.hero;hero.alt=theme==="wood"?"Barbecue meat with smoky glaze":theme==="cream"?"Cheeseburger with fresh toppings":"Juicy cheeseburger with fresh toppings"}const side=document.getElementById("heroSideFood");if(side){side.src=chosen.sideFood;side.alt=theme==="wood"?"Grilled barbecue food":theme==="cream"?"Crispy chicken strips":"Golden crispy seasoned fries"}const third=document.getElementById("heroThirdFood");if(third){third.src=chosen.thirdFood;third.alt=theme==="wood"?"Rustic pizza":theme==="cream"?"Lasagna":"Barbecue wings"}
  items.forEach((item,i)=>{if(chosen.foods[i])item[3]=chosen.foods[i]});
  render();
 }
