@@ -230,6 +230,33 @@ body[data-theme="wood"] .hero-img #heroFoodImage{width:43%;height:66%;top:14%;ri
  body[data-theme="wood"] .hero-img #heroFoodImage{width:53%;height:48%;top:28%;right:3%}
 }
 
+
+/* Fill the dark hero with burger photography instead of empty flat black. */
+body[data-theme="grit"] .hero{
+ background:
+  linear-gradient(90deg,#100d0bf5 0%,#100d0be8 24%,#100d0b99 45%,#100d0b20 74%,#100d0b55 100%),
+  linear-gradient(0deg,#100d0b66,transparent 55%),
+  url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=2200&q=90") center 46%/cover no-repeat;
+}
+body[data-theme="grit"] .hero-img{
+ background:linear-gradient(90deg,#100d0b35,transparent 40%),transparent;
+}
+body[data-theme="grit"] .hero-img:after{
+ background:linear-gradient(90deg,#100d0b35 0%,transparent 38%),linear-gradient(0deg,#08060535,transparent 50%);
+}
+body[data-theme="grit"] .hero-copy{
+ background:linear-gradient(90deg,#100d0be8 0%,#100d0bca 62%,#100d0b00 100%);
+}
+@media(max-width:850px){
+ body[data-theme="grit"] .hero{
+  background:
+   linear-gradient(90deg,#100d0be8 0%,#100d0b99 60%,#100d0b44 100%),
+   linear-gradient(0deg,#100d0bce 0%,transparent 80%),
+   url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1500&q=88") center/cover no-repeat;
+ }
+ body[data-theme="grit"] .hero-copy{background:linear-gradient(90deg,#100d0bc7,#100d0b60)}
+}
+
 </style></head>
 <body data-theme="grit">
 <div class="motion-progress" id="motionProgress" aria-hidden="true"></div>
