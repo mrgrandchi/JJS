@@ -16,8 +16,73 @@ header{display:flex;align-items:center;justify-content:space-between;gap:18px;pa
 body[data-theme="cream"]{--bg:#f4eadb;--panel:#fff9ef;--panel2:#e8d7bf;--text:#1a1714;--muted:#66594b;--accent:#a91f17;--red:#ad2017;--line:#d0b89b;--head:Oswald,Arial,sans-serif}body[data-theme="cream"] .studio,body[data-theme="cream"] .panel{background:#191613;color:white}body[data-theme="cream"] .hero-img:after{background:linear-gradient(90deg,var(--panel),transparent 26%)}body[data-theme="wood"]{--bg:#21170f;--panel:#2b1c12;--panel2:#3a281a;--text:#fff0d8;--muted:#d4bda1;--accent:#d9a66a;--red:#5b2c16;--line:#725033;--head:Oswald,Arial,sans-serif}body[data-theme="wood"] header,body[data-theme="wood"] .footer{background:#140c07}body[data-theme="wood"] .hero{background:#21150d}body.compact .content{padding-top:24px;padding-bottom:24px}body.rounded .card,body.rounded .card img{border-radius:12px;overflow:hidden}
 @media(max-width:850px){header{flex-wrap:wrap}.nav{width:100%;gap:14px}.hero{grid-template-columns:1fr}.hero-copy{padding:36px 24px 25px}.hero-img,.hero-img img{height:310px;min-height:310px}.hero-img:after{background:linear-gradient(0deg,var(--panel),transparent 35%)}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.story{grid-template-columns:1fr}.story img{max-height:300px}.story div{padding:30px}.promise b{font-size:1.05rem}}
 @media(max-width:560px){.studio>div:first-child{width:100%}.themes{width:100%}.themes button{flex:1;padding:7px 4px;font-size:.64rem}.brand .logo{width:48px;height:48px}.brandname{font-size:1.25rem}.nav{gap:12px}.nav a{font-size:.68rem}.hero h1{font-size:4.3rem}.promise span{font-size:.57rem}.cards,.menu-list,.contact-grid{grid-template-columns:1fr}.card img{height:220px}.section-head{display:block}.section-head p{margin-top:12px}.gallery{grid-template-columns:repeat(2,1fr)}.gallery img{height:170px}.footer{display:block}.footer p+p{margin-top:10px}.panel{top:150px}}
+
+/* Motion polish: cinematic entrance, scroll reveals, responsive hover feedback */
+html{scroll-padding-top:90px}
+body{overflow-x:hidden}
+body:before{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 12% 20%,color-mix(in srgb,var(--accent) 13%,transparent),transparent 34%),radial-gradient(ellipse at 85% 80%,color-mix(in srgb,var(--red) 14%,transparent),transparent 38%);animation:ambientDrift 18s ease-in-out infinite alternate}
+@keyframes ambientDrift{0%{transform:translate3d(-1%,0,0) scale(1)}100%{transform:translate3d(2%,-1.5%,0) scale(1.06)}}
+.motion-progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--red),var(--accent),#ffd18b);z-index:100;box-shadow:0 0 12px color-mix(in srgb,var(--accent) 70%,transparent)}
+.studio{backdrop-filter:blur(14px);transition:padding .25s,background .25s}
+header{position:relative;z-index:5;transition:box-shadow .3s,background .3s}
+header.scrolled{box-shadow:0 10px 35px #0005}
+.brand .logo{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.brand:hover .logo{transform:rotate(-8deg) scale(1.06);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 16%,transparent),0 0 30px color-mix(in srgb,var(--accent) 25%,transparent)}
+.nav a{position:relative;transition:color .2s,transform .2s}
+.nav a:not(.cta):after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:2px;background:var(--accent);transition:right .25s}
+.nav a:not(.cta):hover{transform:translateY(-2px)}
+.nav a:not(.cta):hover:after,.nav a.active:not(.cta):after{right:0}
+.btn,.themes button,.customize{transition:transform .22s,box-shadow .22s,background .22s,border-color .22s}
+.btn:hover,.themes button:hover,.customize:hover{transform:translateY(-3px);box-shadow:0 9px 24px color-mix(in srgb,var(--accent) 23%,transparent)}
+.btn:active,.themes button:active,.customize:active{transform:translateY(0) scale(.98)}
+.hero-copy{position:relative;z-index:1;animation:copyEnter .85s cubic-bezier(.2,.8,.2,1) both}
+@keyframes copyEnter{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero .eyebrow{animation:copyEnter .7s .08s both}
+.hero h1{animation:copyEnter .8s .14s both}
+.hero-copy>p{animation:copyEnter .8s .22s both}
+.hero-copy .buttons{animation:copyEnter .8s .3s both}
+.hero-img{overflow:hidden}
+.hero-img img{transform:scale(1.045);animation:heroPhotoIn 1.4s cubic-bezier(.2,.7,.2,1) both;transition:transform 1s cubic-bezier(.2,.7,.2,1),filter .5s}
+.hero:hover .hero-img img{transform:scale(1.09);filter:saturate(1.12)}
+@keyframes heroPhotoIn{from{opacity:.35;transform:scale(1.15)}to{opacity:1;transform:scale(1.045)}}
+.hero-img:before{content:"";position:absolute;z-index:2;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 20%,#ffffff16 45%,transparent 60%);transform:translateX(-120%);animation:photoShine 1.2s .45s ease-out both}
+@keyframes photoShine{to{transform:translateX(120%)}}
+.promise div{transition:background .3s,transform .3s}
+.promise div:hover{background:color-mix(in srgb,var(--accent) 10%,var(--panel2));transform:translateY(-3px)}
+.promise b{transition:letter-spacing .25s}
+.promise div:hover b{letter-spacing:.04em;color:var(--accent)}
+.card{position:relative;overflow:hidden;transform:translateY(0);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .35s}
+.card:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 18px 35px #0006}
+.card img{transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .4s}
+.card:hover img{transform:scale(1.075);filter:saturate(1.18) contrast(1.03)}
+.card div{transition:background .3s}
+.card:hover div{background:color-mix(in srgb,var(--accent) 7%,var(--panel))}
+.section-head h2{animation:headingIn .7s both}
+@keyframes headingIn{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:translateX(0)}}
+.story img{transition:transform .8s,filter .5s}
+.story:hover img{transform:scale(1.025);filter:saturate(1.1)}
+.story{overflow:hidden}
+.pagehead{position:relative;overflow:hidden}
+.pagehead:after{content:"";position:absolute;width:320px;height:320px;border:1px solid color-mix(in srgb,var(--accent) 24%,transparent);border-radius:50%;right:-100px;top:-155px;box-shadow:0 0 0 25px color-mix(in srgb,var(--accent) 4%,transparent),0 0 0 55px color-mix(in srgb,var(--accent) 3%,transparent);pointer-events:none;animation:slowOrbit 22s linear infinite}
+@keyframes slowOrbit{to{transform:rotate(360deg)}}
+.menu-item{transition:transform .25s,border-color .25s}
+.menu-item:hover{transform:translateX(5px);border-color:var(--accent)}
+.menu-item img{transition:transform .5s,filter .4s}
+.menu-item:hover img{transform:scale(1.04);filter:saturate(1.15)}
+.gallery img{transition:transform .45s,filter .45s,box-shadow .45s;cursor:zoom-in}
+.gallery img:hover{transform:scale(1.025);filter:saturate(1.15);box-shadow:0 12px 28px #0007;z-index:1}
+.info{transition:transform .3s,border-color .3s,box-shadow .3s}
+.info:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 14px 30px #0003}
+.reveal-ready .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1)}
+.reveal-ready .reveal.in-view{opacity:1;transform:translateY(0)}
+.reveal-ready .reveal[data-delay="1"]{transition-delay:.08s}.reveal-ready .reveal[data-delay="2"]{transition-delay:.16s}.reveal-ready .reveal[data-delay="3"]{transition-delay:.24s}
+.toast{animation:toastIn .25s ease-out}
+@keyframes toastIn{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal-ready .reveal{opacity:1;transform:none}}
+
 </style></head>
 <body data-theme="grit">
+<div class="motion-progress" id="motionProgress" aria-hidden="true"></div>
 <div class="studio"><div><strong>JJS · WEBSITE CONCEPT</strong><small>Switch designs and explore pages</small></div><div class="themes"><button class="active" data-theme="grit">01 Black / Orange</button><button data-theme="cream">02 Cream / Red</button><button data-theme="wood">03 Rustic Wood</button></div><button class="customize" id="openPanel">⚙ Customize</button></div>
 <aside class="panel" id="panel"><h2>Customize</h2><p style="color:var(--muted);font-size:.8rem">Adjust the live preview.</p><div class="setting"><label for="business">Business name</label><input id="business" value="JJ’s Wings & Things"></div><div class="setting"><label for="headline">Hero headline (use | to split lines)</label><input id="headline" value="JJ’s|Wings & Things"></div><div class="setting"><label for="accent">Accent colour</label><input id="accent" type="color" value="#f07822"></div><div class="setting"><label for="background">Background colour</label><input id="background" type="color" value="#100f0e"></div><div class="setting"><label for="font">Heading font</label><select id="font"><option value="condensed">Bold condensed</option><option value="serif">Classic serif</option><option value="sans">Clean sans-serif</option></select></div><div class="setting"><label for="spacing">Section spacing</label><select id="spacing"><option value="normal">Normal</option><option value="compact">Compact</option></select></div><div class="setting"><label for="corners">Card corners</label><select id="corners"><option value="sharp">Sharp poster style</option><option value="rounded">Rounded</option></select></div><div class="panel-actions"><button class="btn" id="reset">Reset</button><button class="btn secondary" id="save">Save locally</button></div></aside>
 <header><a class="brand" href="#home" data-page="home"><div class="logo">JJ<small>WINGS & THINGS</small></div><span class="brandname" id="brandname">JJ’s <span>Wings</span><br>& Things<small>FORT HOPE, ONTARIO</small></span></a><nav class="nav"><a href="#home" data-page="home" class="active">Home</a><a href="#menu" data-page="menu">Menu</a><a href="#about" data-page="about">About</a><a href="#gallery" data-page="gallery">Gallery</a><a href="#contact" data-page="contact">Contact</a><a class="cta" href="#menu" data-page="menu">View Menu</a></nav></header>
@@ -50,4 +115,35 @@ document.addEventListener("click",e=>{const a=e.target.closest("[data-page]");if
 function nameUpdate(){let n=$("#business").value.trim()||"JJ’s Wings & Things";$("#brandname").innerHTML=safe(n).replace("Wings",'<span>Wings</span>')+'<small>FORT HOPE, ONTARIO</small>';$("#footername").textContent=n;document.title=n+" | Fort Hope"}
 $("#business").addEventListener("input",nameUpdate);$("#headline").addEventListener("input",e=>{let p=e.target.value.split("|");$("#heroHeading").innerHTML=safe(p[0]||"JJ’s")+' <span>'+safe(p[1]||"Wings & Things")+'</span>'});$("#accent").addEventListener("input",e=>document.documentElement.style.setProperty("--accent",e.target.value));$("#background").addEventListener("input",e=>document.documentElement.style.setProperty("--bg",e.target.value));$("#font").addEventListener("change",e=>document.documentElement.style.setProperty("--head",e.target.value==="serif"?"Georgia,serif":e.target.value==="sans"?"Arial,sans-serif":"'Barlow Condensed',Impact,sans-serif"));$("#spacing").addEventListener("change",e=>document.body.classList.toggle("compact",e.target.value==="compact"));$("#corners").addEventListener("change",e=>document.body.classList.toggle("rounded",e.target.value==="rounded"));
 function toast(s){$("#toast").textContent=s;$("#toast").classList.add("show");setTimeout(()=>$("#toast").classList.remove("show"),2200)}$("#reset").addEventListener("click",()=>{setTheme(current);$("#business").value="JJ’s Wings & Things";$("#headline").value="JJ’s|Wings & Things";$("#font").value="condensed";nameUpdate();toast("Preview reset.")});$("#save").addEventListener("click",()=>{try{localStorage.setItem("jjs-demo",JSON.stringify({theme:current,name:$("#business").value,headline:$("#headline").value,accent:$("#accent").value,bg:$("#background").value,font:$("#font").value,spacing:$("#spacing").value,corners:$("#corners").value}));toast("Settings saved in this browser.")}catch(e){toast("Browser storage unavailable.")}});$("#contactForm").addEventListener("submit",e=>{e.preventDefault();toast("Demo only — no message was sent.")});render();setTheme("grit");nameUpdate();page(location.hash.slice(1)||"home");
+
+/* Scroll-driven motion enhancements; respects reduced-motion preferences. */
+(function(){
+ const reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+ const progress=document.getElementById("motionProgress");
+ const header=document.querySelector("header");
+ function scrollFX(){
+  const max=document.documentElement.scrollHeight-window.innerHeight;
+  if(progress) progress.style.width=(max>0?(window.scrollY/max)*100:0)+"%";
+  if(header) header.classList.toggle("scrolled",window.scrollY>20);
+ }
+ window.addEventListener("scroll",scrollFX,{passive:true});scrollFX();
+ if(!reduced&&"IntersectionObserver" in window){
+  document.body.classList.add("reveal-ready");
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("in-view");observer.unobserve(entry.target)}});
+  },{threshold:.12,rootMargin:"0px 0px -35px 0px"});
+  function attachReveals(){
+   document.querySelectorAll(".content,.story,.pagehead,.promise,.card,.menu-item,.gallery img,.info").forEach((el,i)=>{
+    if(el.classList.contains("reveal"))return;
+    el.classList.add("reveal");el.dataset.delay=String(i%4);observer.observe(el);
+   });
+  }
+  attachReveals();
+  const originalRender=window.render;
+  // Existing cards are rendered on startup; observe them after the first paint.
+  window.addEventListener("load",()=>setTimeout(attachReveals,100));
+  document.addEventListener("click",e=>{if(e.target.closest("[data-page]"))setTimeout(attachReveals,120)});
+ }
+})();
+
 </script></body></html>
