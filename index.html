@@ -96,6 +96,15 @@ header.scrolled{box-shadow:0 10px 35px #0005}
 @media(max-width:850px){.hero-img{inset:0;opacity:.5}.hero-img:after{background:linear-gradient(90deg,var(--panel) 0%,color-mix(in srgb,var(--panel) 72%,transparent) 55%,#0002),linear-gradient(0deg,var(--panel),transparent 65%)}.hero-copy{min-height:500px;max-width:100%;position:relative}.hero h1{max-width:650px}}
 @media(max-width:560px){.hero-copy{min-height:520px;padding-top:42px}.hero h1{font-size:clamp(3.6rem,16vw,5rem)}.hero-food-tags{gap:6px}.hero-food-tags span{font-size:.62rem;padding:6px 8px}}
 
+
+/* Food-first hero: feature the burger, fries and theme-specific secondary dish. */
+.hero-img .hero-side-food{position:absolute;z-index:4;right:4%;bottom:5%;width:31%;height:30%;min-height:0;object-fit:cover;border:3px solid #f8e8d4;border-radius:4px;box-shadow:0 14px 36px #0009;transform:rotate(2deg);transition:transform .4s,border-color .3s}
+.hero-img:hover .hero-side-food{transform:rotate(0) scale(1.035);border-color:var(--accent)}
+.hero-img:after{z-index:2}
+.hero-img:before{z-index:3}
+@media(max-width:850px){.hero-img .hero-side-food{right:5%;bottom:7%;width:34%;height:33%}}
+@media(max-width:560px){.hero-img .hero-side-food{width:38%;height:34%;right:4%;bottom:5%}}
+
 </style></head>
 <body data-theme="grit">
 <div class="motion-progress" id="motionProgress" aria-hidden="true"></div>
@@ -103,7 +112,7 @@ header.scrolled{box-shadow:0 10px 35px #0005}
 <aside class="panel" id="panel"><h2>Customize</h2><p style="color:var(--muted);font-size:.8rem">Adjust the live preview.</p><div class="setting"><label for="business">Business name</label><input id="business" value="JJ’s Wings & Things"></div><div class="setting"><label for="headline">Hero headline (use | to split lines)</label><input id="headline" value="JJ’s|Wings & Things"></div><div class="setting"><label for="accent">Accent colour</label><input id="accent" type="color" value="#f07822"></div><div class="setting"><label for="background">Background colour</label><input id="background" type="color" value="#100f0e"></div><div class="setting"><label for="font">Heading font</label><select id="font"><option value="condensed">Bold condensed</option><option value="serif">Classic serif</option><option value="sans">Clean sans-serif</option></select></div><div class="setting"><label for="spacing">Section spacing</label><select id="spacing"><option value="normal">Normal</option><option value="compact">Compact</option></select></div><div class="setting"><label for="corners">Card corners</label><select id="corners"><option value="sharp">Sharp poster style</option><option value="rounded">Rounded</option></select></div><div class="panel-actions"><button class="btn" id="reset">Reset</button><button class="btn secondary" id="save">Save locally</button></div></aside>
 <header><a class="brand" href="#home" data-page="home"><div class="logo">JJ<small>WINGS & THINGS</small></div><span class="brandname" id="brandname">JJ’s <span>Wings</span><br>& Things<small>FORT HOPE, ONTARIO</small></span></a><nav class="nav"><a href="#home" data-page="home" class="active">Home</a><a href="#menu" data-page="menu">Menu</a><a href="#about" data-page="about">About</a><a href="#gallery" data-page="gallery">Gallery</a><a href="#contact" data-page="contact">Contact</a><a class="cta" href="#menu" data-page="menu">View Menu</a></nav></header>
 <main>
-<section class="page active" id="page-home"><div class="hero"><div class="hero-copy"><div class="eyebrow">Fort Hope, Ontario</div><h1 id="heroHeading">JJ’s <span>Wings & Things</span></h1><p>Wings, fries, poutine, nachos with cheese sauce, burgers, smokies and weekly specials.</p><div class="buttons"><a class="btn" href="#menu" data-page="menu">View Menu</a><a class="btn secondary" href="#contact" data-page="contact">Contact JJ</a></div><div class="hero-food-tags"><span>Wings</span><span>Burgers</span><span>Fries</span><span>Poutine</span></div></div><div class="hero-img"><img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=1400&q=85" alt="Saucy chicken wings and golden fries"></div></div><div class="promise"><div><b>Delicious Meals</b><span>Wings, burgers, more</span></div><div><b>Local Business</b><span>Proudly Fort Hope</span></div><div><b>Good Food</b><span>Brings people together</span></div></div><section class="content"><div class="section-head"><h2>Featured <span>Favourites</span></h2><p>A bold, food-first design inspired by JJ’s branding. Confirm menu details before publishing.</p></div><div class="cards" id="featured"></div></section><section class="story"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=85" alt="Warm restaurant interior"><div><div class="eyebrow">Good food · Community first</div><h2>Good Food.<br><span>Stronger Community.</span></h2><p>This space can share JJ’s own story and what makes his food special.</p><a class="btn" href="#about" data-page="about">About JJ’s</a></div></section></section>
+<section class="page active" id="page-home"><div class="hero"><div class="hero-copy"><div class="eyebrow">Fort Hope, Ontario</div><h1 id="heroHeading">JJ’s <span>Wings & Things</span></h1><p>Wings, fries, poutine, nachos with cheese sauce, burgers, smokies and weekly specials.</p><div class="buttons"><a class="btn" href="#menu" data-page="menu">View Menu</a><a class="btn secondary" href="#contact" data-page="contact">Contact JJ</a></div><div class="hero-food-tags"><span>Wings</span><span>Burgers</span><span>Fries</span><span>Poutine</span></div></div><div class="hero-img"><img id="heroFoodImage" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1800&q=88" alt="Juicy cheeseburger with fresh toppings"><img class="hero-side-food" id="heroSideFood" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=85" alt="Golden crispy seasoned fries"></div></div><div class="promise"><div><b>Delicious Meals</b><span>Wings, burgers, more</span></div><div><b>Local Business</b><span>Proudly Fort Hope</span></div><div><b>Good Food</b><span>Brings people together</span></div></div><section class="content"><div class="section-head"><h2>Featured <span>Favourites</span></h2><p>A bold, food-first design inspired by JJ’s branding. Confirm menu details before publishing.</p></div><div class="cards" id="featured"></div></section><section class="story"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=85" alt="Warm restaurant interior"><div><div class="eyebrow">Good food · Community first</div><h2>Good Food.<br><span>Stronger Community.</span></h2><p>This space can share JJ’s own story and what makes his food special.</p><a class="btn" href="#about" data-page="about">About JJ’s</a></div></section></section>
 <section class="page" id="page-menu"><div class="pagehead"><div class="eyebrow">Fort Hope, Ontario</div><h1>View Menu</h1><p>The supplied menu poster's price period ended September 30, 2026. Current prices and availability must be confirmed before launch.</p></div><section class="content"><div class="menu-list" id="menuList"></div><p class="pending">Current prices, portions and availability need owner confirmation.</p></section></section>
 <section class="page" id="page-about"><div class="pagehead"><div class="eyebrow">About the business</div><h1>Local Flavour</h1><p>This page is ready for JJ’s approved business story, real kitchen photos and community details.</p></div><section class="content"><div class="story"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=85" alt="Restaurant table setting"><div><h2>More Than<br><span>Just Great Food.</span></h2><p>Replace this placeholder with JJ’s own words before launch.</p><a class="btn" href="#contact" data-page="contact">Get in touch</a></div></div></section></section>
 <section class="page" id="page-gallery"><div class="pagehead"><div class="eyebrow">Food photos</div><h1>Gallery</h1><p>Showcase real food photos, weekly specials and customer favourites.</p></div><section class="content"><div class="gallery" id="gallery"></div><p class="pending">Illustrative photos should be replaced with actual dish photos where possible.</p></section></section>
@@ -127,7 +136,9 @@ function render(){const card=d=>'<article class="card"><img loading="lazy" src="
 /* Theme-specific food photography: each design has its own visual food mood. */
 const photoThemes={
  grit:{
-  hero:"https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=1800&q=88",
+  hero:"https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1800&q=88",
+  sideFood:"https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=700&q=85",
+  sideFood:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=85",
   foods:[
    "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85",
    "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85",
@@ -154,6 +165,7 @@ const photoThemes={
  },
  wood:{
   hero:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=88",
+  sideFood:"https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=700&q=85",
   foods:[
    "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85",
    "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=85",
@@ -168,7 +180,7 @@ const photoThemes={
 };
 function applyFoodPhotography(theme){
  const chosen=photoThemes[theme]||photoThemes.grit;
- const hero=document.querySelector(".hero-img img");if(hero)hero.src=chosen.hero;
+ const hero=document.getElementById("heroFoodImage");if(hero){hero.src=chosen.hero;hero.alt=theme==="wood"?"Smoky barbecue ribs and grilled meat":theme==="cream"?"Cheeseburger and fresh toppings":"Juicy cheeseburger with fresh toppings"}const side=document.getElementById("heroSideFood");if(side){side.src=chosen.sideFood;side.alt=theme==="wood"?"Burrito wrap":theme==="cream"?"Crispy chicken strips":"Golden crispy seasoned fries"}
  items.forEach((item,i)=>{if(chosen.foods[i])item[3]=chosen.foods[i]});
  render();
 }
