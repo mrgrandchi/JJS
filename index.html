@@ -82,7 +82,7 @@ const photoThemes={
 function applyFoodPhotography(theme){
  const chosen=photoThemes[theme]||photoThemes.grit;
  const hero=document.getElementById("heroFoodImage");if(hero){hero.src=chosen.hero;hero.alt=theme==="wood"?"Barbecue meat with smoky glaze":theme==="cream"?"Cheeseburger with fresh toppings":"Juicy cheeseburger with fresh toppings"}const side=document.getElementById("heroSideFood");if(side){side.src=chosen.sideFood;side.alt=theme==="wood"?"Grilled barbecue food":theme==="cream"?"Crispy chicken strips":"Golden crispy seasoned fries"}const third=document.getElementById("heroThirdFood");if(third){third.src=chosen.thirdFood;third.alt=theme==="wood"?"Rustic pizza":theme==="cream"?"Lasagna":"Barbecue wings"}
- items.forEach((item,i)=>{if(chosen.foods[i])item[3]=chosen.foods[i]});
+ items.forEach((item,i)=>{if(i===2)item[3]="https://d2ol7oe51mr4n9.cloudfront.net/user_3EHWTT3XGnebSOAty8xUltDhZkL/fb6db769-a6bd-4d1d-8b86-35cc7bf434a6.png";else if(chosen.foods[i])item[3]=chosen.foods[i]});
  render();
 }
 
